@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+<!--Feathers Icons-->
+<script src="https://unpkg.com/feather-icons"></script>
+
+<!-- my style -->
+<link rel="stylesheet" href="css/style.css">
+<!-- end of my style -->
+
+<!-- style for backlight starts here -->
+<link rel="stylesheet" href="css/backlight.css">
+<!-- style for backlight ends here -->
+
+<!-- style for temperature starts here -->
+<link rel="stylesheet" href="css/temperature.css">
+<!-- style for nest thermostat -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&amp;display=swap'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Unica+One&amp;display=swap'>
+<!-- end of style for nest thermostat -->
+<!-- style for temperature ends here -->
+
+<!-- style for digital clocks -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Share+Tech+Mono'>
+<!-- style for digital clocks ends here -->
+
+<!-- glass button style starts here -->
+<link rel="stylesheet" href="css/glass-button.css">
+<!-- glass button style ends here -->
+
+<!-- fonts -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+
+<!-- end fonts -->
+</head>
+<body>
+<!-- backlight starts here -->
+    <div class="backlight">BACKLIGHT</div>
+<!--backlight ends here  -->
+
+<!-- glass button starts here -->
+<footer class="footer">
+    <div class="glass">
+        <div class="btn prev"><a href="page2.html">Prev</a></div>
+        <div class="btn next"><a href="index.html" >Next</a></div>
+    </div>
+</footer>
+<!-- glass button ends here -->
+
+<!--navbar Start-->
+    <nav class="navbar">
+        <div class="navbar-extra">
+            <a href="#" id="settings" ><i data-feather="settings" class="feather-32"></i></a>
+        </div>
+        <div id="clock">
+            <p class="clock-date">{{ date }}</p>
+            <p class="clock-time">{{ time }}</p>
+        </div>
+        <div class="navbar-logo"><span>SYAS></span> Technology</div>
+  </nav>  
+<!--navbar End-->
+
+<!-- main contents starts here -->
+    <div class="container">
+            <div class="suhu item">
+                <div class="temp">
+                    <div class="temp__logo">SYAS</div>
+                    <div class="temp__comet"></div>
+                    <canvas class="temp__fizz"></canvas>
+                    <div class="temp__label">Temp</div>
+                    <div class="temp__value">0</div>
+                    <div class="temp__dial"></div>
+              </div>
+              <div class="control-suhu">
+                    Temp Control
+              </div>
+            </div>
+            <div class="humidity item ">humidity</div>
+            <div class="pressure item ">pressure</div>
+            <div class="TBA1 item ">TBA</div>
+            <div class="TBA2 item" >TBA2</div>
+            <div class="stopwatch item ">stopwatch</div>
+            <div class="sliding-door item ">door</div>
+            <div class="lampu item ">lampu</div>
+            <div class="TBA3 item">TBA3</div>
+            <div class="TBA4 item ">TBA4</div
+    </div>
+<!-- main contents ends here -->
+
+<!-- semua javascripts kode dimulai dari sini -->
+    <!--feathers Icons-->
+    <script>feather.replace()</script>
+
+<!-- scripts for clock in navbar start here -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
+<script src="js/clock.js"></script>
+<!-- scripts for clock in navbar ends here -->
+
+<!-- scripts for temperature starts here -->
+<script src="js/temperature.js"></script>
+<!-- script for nest thermostat -->
+<script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
+<script src='https://unpkg.com/gsap@3/dist/Draggable.min.js'></script><script  src="./script.js"></script>
+<!-- script for nes thermostat ends here -->
+<!-- scripts for temperature ends here -->
+
+<!-- semua javascripts kode berakhir disini -->
+</body>
+</html>

@@ -1,0 +1,110 @@
+.temp {
+	--angle: 0;
+	--hue: 240;
+  margin: auto;
+	background-image:
+		radial-gradient(
+			100% 100% at 50% 50%,
+			hsl(var(--hue),100%,70%) 4em,
+			hsla(var(--hue),100%,20%,0) 6em
+		),
+		radial-gradient(
+			100% 100% at 50% 50%,
+			hsl(var(--hue),10%,1%),
+			hsl(var(--hue),90%,35%) 100em,
+			hsl(var(--hue),90%,60%) 5.82em 5.88em,
+			#17181c 0.4em 13em,
+			#17181c00 6.9em
+		),
+		radial-gradient(5% 5% at 50% 0,#242429,#1b1212);
+	border-radius: 50%;
+	box-shadow: 0 -0.25em 1.5em 0.5em #0004;
+	display: flex;
+	flex-direction: column;
+	line-height: 1;
+	position: relative;
+	padding: 1%;
+	text-align: center;
+	width: 70%;
+	height: 70%;
+}
+.temp:after, .temp__dial, .temp__comet, .temp__fizz {
+	position: absolute;
+}
+.temp:after, .temp__comet, .temp__dial {
+	border-radius: 50%;
+}
+.temp:after, .temp__dial {
+	top: 10%;
+	left: 10%;
+	right: 10%;
+	bottom: 10%;
+	width: 80%;
+	height: 80%;
+}
+.temp:after {
+	background: 
+		radial-gradient(100% 100% at 67% 17%,#fff3,#fff0 6em);
+	content: "";
+	display: block;
+	z-index: 2;
+}
+.temp__logo {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	color: #06caf1;
+  font-size: 15px;
+	letter-spacing: -0.1em;
+	margin-bottom: 2.8em;
+  padding-top: 5px;
+	transform: scaleY(1);
+}
+.temp__comet {
+	background:
+		radial-gradient(
+			100% 100% at 50% 50%,
+			hsl(var(--hue),90%,10%),
+			hsl(var(--hue),90%,20%) 2em,
+			hsl(var(--hue),90%,17%) 3.96em 4.02em,
+			hsla(var(--hue),90%,17%,0) 4.08em
+		),
+		conic-gradient(#fff0,#fff calc(1deg * var(--angle)),#fff0 calc(1deg * var(--angle)));
+	top: calc(50% - 35%);
+	left: calc(50% - 35%);
+	width: 70%;
+	height: 70%;
+}
+.temp__fizz {
+	display: block;
+	top: calc(50% - 25%);
+	left: calc(50% - 25%);
+	width: 50%;
+	height: 50%;
+}
+.temp__label, .temp__value {
+	color: #fff;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	position: relative;
+	z-index: 1;
+}
+.temp__label {
+	font-size: 0.5em;
+	letter-spacing: 0.5em;
+	text-transform: uppercase;
+	transform: translateX(0.25em) scaleY(1);
+}
+.temp__value {
+	font-size: 2em;
+}
+.temp__dial {
+	cursor: grab;
+	z-index: 3;
+}
+.temp__dial:active {
+	cursor: grabbing;
+}
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #2e3138;
+	}
+}
