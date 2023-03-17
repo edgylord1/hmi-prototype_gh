@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 2</title>
+    <title>Homepage</title>
 <!--Feathers Icons-->
 <script src="https://unpkg.com/feather-icons"></script>
 
 <!-- my style -->
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style-page2.css">
 <!-- end of my style -->
 
 <!-- style for backlight starts here -->
@@ -18,11 +18,9 @@
 
 <!-- style for temperature starts here -->
 <link rel="stylesheet" href="css/temperature.css">
-<!-- style for nest thermostat -->
-<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&amp;display=swap'>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Unica+One&amp;display=swap'>
-<!-- end of style for nest thermostat -->
+
 <!-- style for temperature ends here -->
+
 
 <!-- style for digital clocks -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -35,15 +33,18 @@
 
 <!-- fonts -->
 
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@1,400;1,700&display=swap" rel="stylesheet"> -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
 <!-- end fonts -->
 </head>
 <body>
 <!-- backlight starts here -->
-    <div class="backlight">BACKLIGHT</div>
+    <div class="backlight"></div>
 <!--backlight ends here  -->
 
 <!-- glass button starts here -->
@@ -64,34 +65,194 @@
             <p class="clock-date">{{ date }}</p>
             <p class="clock-time">{{ time }}</p>
         </div>
-        <div class="navbar-logo">SYAS Technology</div>
+        <div class="navbar-logo">
+            <img src="img/syas-logo.png" alt="logo">
+        </div>
   </nav>  
 <!--navbar End-->
 
 <!-- main contents starts here -->
     <div class="container">
-            <div class="suhu item">
-                <div class="temp">
-                    <div class="temp__logo">SYAS</div>
-                    <div class="temp__comet"></div>
-                    <canvas class="temp__fizz"></canvas>
-                    <div class="temp__label">Temp</div>
-                    <div class="temp__value">0</div>
-                    <div class="temp__dial"></div>
-              </div>
-              <div class="control-suhu">
-                    Temp Control
-              </div>
+<!-- untuk pengontrol suhu/thermostat starts here -->
+            <div class="light item">
+                <div class="light-icon icon">
+                    <img src="img/lampu-icon.png" alt="light-icon">
+                </div>
+                <div class="light-nilai"></div>
+                
+                <div class="light-label">
+                    Light
+                </div>
             </div>
-            <div class="humidity item ">humidity</div>
-            <div class="pressure item ">pressure</div>
-            <div class="TBA1 item ">TBA</div>
-            <div class="TBA2 item" >TBA2</div>
-            <div class="stopwatch item ">stopwatch</div>
-            <div class="sliding-door item ">door</div>
-            <div class="lampu item ">lampu</div>
-            <div class="TBA3 item">TBA3</div>
-            <div class="TBA4 item ">TBA4</div
+<!-- pengontrol suhu/thermostat ends here -->
+<!-- pengontrol humidity starts here -->
+            <div class="humidity item ">
+                <div class="humidity-icon icon">
+                    <img src="img/humidity-icon.png" alt="humidity-icon">
+                </div>
+            <div class="humidity-nilai"></div>
+                <div class="humidity-label">
+                            Humidity
+                </div>
+            </div>
+<!-- pengontrol humidity ends here -->
+<!-- pengontrol pressure starts here -->
+            <div class="pressure item ">
+                <div class="pressure-icon icon">
+                    <img src="img/pressure-icon.png" alt="pressure-icon">
+                </div>
+                <div class="pressure-nilai">
+                    2.5<sup>Pa</sup>
+                </div>
+                <div class="pressure-label">
+                            Pressure
+                </div>
+            </div>
+<!-- pengontrol pressure ends here -->
+<!-- temperature SID starts here -->
+            <div class="sid-temp item ">
+                <div class="sid-temp-icon icon">
+                    <img src="img/temperature-icon.png" alt="sid-temp-icon">
+                </div>
+                <div class="sid-temp-nilai">
+                    25<sup>&#8451</sup>
+                </div> 
+                <div class="sid-temp-label">
+                            SID Temperature
+                </div>
+            </div>
+<!-- temperature SID ends here -->
+<!--humidity SID starts here  -->
+            <div class="sid-hum item" >
+                <div class="sid-hum-icon icon">
+                    <img src="img/humidity-icon.png" alt="sid-hum-icon">
+                </div>
+                <div class="sid-hum-nilai">
+                    60<sup>%RH</sup>
+                </div>
+                <div class="sid-hum-label">
+                            SID Humidity
+                </div> 
+            </div>
+<!-- humidity SID ends here -->
+<!-- stopwatch starts here -->
+            <div class="stopwatch item ">
+                <div class="stopwatch-icon icon">
+                    <img src="img/stopwatch-icon.png" alt="stopwatch-icon">
+                </div>
+                <div class="stopwatch-nilai"></div>
+                <div class="stopwatch-label">
+                            Stopwatch
+                </div> 
+            </div>
+<!-- stopwatch ends here -->
+<!-- sliding door starts here -->
+            <div class="sliding-door item ">
+                <div class="sliding-door-icon icon">
+                    <img src="img/sliding-door-icon.png" alt="sliding-door-icon">
+                </div>
+                <div class="sliding-door-nilai">
+                    <button>Up</button>
+                    <button>Down</button>
+                </div>
+                <div class="sliding-door-label">
+                            Sliding Door
+                </div> 
+            </div>
+<!-- sliding door ends here -->
+<!-- dali light starts here -->
+            <div class="surgical-light item ">
+                <div class="surgical-light-icon icon">
+                    <img src="img/lampu-icon.png" alt="lampu-icon">
+                </div>
+                <div class="surgical-light--nilai">
+                    ON
+                </div>
+                <div class="surgical-light-label">
+                            Surgical Light
+                </div> 
+            </div>
+<!-- dali light ends here -->
+<!-- AC starts here -->
+            <div class="AC item">
+                <div class="AC-icon icon">
+                    <img src="img/AC-icon.png" alt="AC-icon">
+                </div>
+                <div class="AC-nilai"></div>
+                <div class="AC-label">
+                AC
+                </div> 
+            </div>
+<!-- AC ends here -->
+<!-- music starts here -->
+            <div class="music item ">
+                <div class="music-icon icon">
+                    <img src="img/music-icon.png" alt="music-icon">
+                </div>
+                <div class="music-nilai">
+                    <div id="player">
+                        <div id="player-track">
+                            <div id="album-name"></div>
+                            <div id="track-name"></div>
+                            <div id="track-time">
+                                <div id="current-time"></div>
+                                <div id="track-length"></div>
+                            </div>
+                            <div id="s-area">
+                                <div id="ins-time"></div>
+                                <div id="s-hover"></div>
+                                <div id="seek-bar"></div>
+                            </div>
+                        </div>
+                        <div id="player">
+                            <div id="player-track">
+                                <div id="album-name"></div>
+                                <div id="track-name"></div>
+                                <div id="track-time">
+                                    <div id="current-time"></div>
+                                    <div id="track-length"></div>
+                            </div>
+                            <div id="s-area">
+                                <div id="ins-time"></div>
+                                <div id="s-hover"></div>
+                                <div id="seek-bar"></div>
+                            </div>
+                        </div>
+                        <div id="player-content">
+                            <div id="album-art">
+                                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg" class="active" id="_1">
+                                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_2.jpg" id="_2">
+                                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_3.jpg" id="_3">
+                                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_4.jpg" id="_4">
+                                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_5.jpg" id="_5">
+                                <div id="buffer-box">Buffering ...</div>
+                            </div>
+                            <div id="player-controls">
+                                <div class="control">
+                                    <div class="button" id="play-previous">
+                                        <i class="fas fa-backward"></i>
+                                    </div>
+                                </div>
+                                <div class="control">
+                                    <div class="button" id="play-pause-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                                <div class="control">
+                                    <div class="button" id="play-next">
+                                        <i class="fas fa-forward"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="music-label">
+                Music
+                </div> 
+            </div>
+        </div>
     </div>
 <!-- main contents ends here -->
 
@@ -106,11 +267,9 @@
 
 <!-- scripts for temperature starts here -->
 <script src="js/temperature.js"></script>
-<!-- script for nest thermostat -->
-<script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
-<script src='https://unpkg.com/gsap@3/dist/Draggable.min.js'></script><script  src="./script.js"></script>
-<!-- script for nes thermostat ends here -->
+
 <!-- scripts for temperature ends here -->
+
 
 <!-- semua javascripts kode berakhir disini -->
 </body>
