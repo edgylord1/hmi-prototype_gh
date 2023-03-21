@@ -18,7 +18,7 @@
     text-decoration: none;
 }
 body{
-    background-color: rgb(6, 5, 5);
+    background-image: url(../img/bg/bg3.jpg);
 }
 
 /* navbar style */
@@ -26,8 +26,8 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:1rem 2%;
-    background-color:black;
+    padding:5px 2%;
+    background-image: url(../img/bg/bg-for-navbar.jpg);
     border-bottom: 1px solid rgb(246, 247, 248);
     position:fixed;
     top: 0;
@@ -104,6 +104,8 @@ body{
     padding:2%;
     margin : 2%;
     border-radius: 3%;
+    background-color: #1c1a1a; 
+    border : 1px solid white;
 }
 
 /* styling for temperature control starts  here */
@@ -232,7 +234,7 @@ body{
     display: grid;
     position: relative;
     grid-area: sid-temp;
-    background-color: blue;
+    background-color: #1c1a1a;
     padding: 1%;
     justify-content: center;
     align-items: center;
@@ -280,7 +282,7 @@ body{
     justify-content: center;
     align-items: center;
     grid-area: sid-hum;
-    background-color: brown;
+    background-color: #1c1a1a;
     padding: 1%;
 }
 .container .sid-hum .sid-hum-icon{
@@ -331,6 +333,8 @@ body{
     justify-content: center;
     align-items: center;
     padding: 1%;
+    background-color: #c4c0c0;
+    border-radius: 3%;
 }
 .container .stopwatch .stopwatch-icon{
     position: absolute;
@@ -339,15 +343,26 @@ body{
     height: 20%;
     padding:2%;
     margin: auto;
-    background-color: transparent;
+    background-color: #1c1a1a;
     color: #daf6ff;
     border-bottom: 2px solid white;
+    border-radius: 3%;
 }
 .container .stopwatch .stopwatch-icon img{
     display: block;
     height: 100%;
     margin: auto;
 
+}
+.container .stopwatch .stopwatch-nilai{
+    position: relative;
+    display: grid;
+    width: 200px;
+    height: 150px;
+    margin: 0;
+    padding: 0;
+    background-color:transparent;
+    border-radius: 3%;
 }
 .container .stopwatch .stopwatch-label{
     display: grid;
@@ -361,6 +376,7 @@ body{
     margin: auto;
     color: #ece5e5;
     border-top: 2px solid rgb(249, 249, 249);
+    background-color: #1c1a1a;
 }
 /* styling for stopwatch ends here */
 /* styling for sliding-door starts here */
@@ -370,7 +386,7 @@ body{
     position: relative;
     justify-content: center;
     align-items: center;
-    background-color: brown;
+    background-color: #1c1a1a;
     padding: 1%;
 }
 .container .sliding-door .sliding-door-icon{
@@ -400,15 +416,17 @@ body{
     display: block;
     width: 100px;
     height: 50px;
-    margin-top: 10%;
     background-color: transparent;
     border: 2px solid white;
     color: #daf6ff;
+    transition: 0.1s;
+    border-radius: 10%;
 }
 .container .sliding-door .sliding-door-nilai button:hover{
     
     border-bottom: 100px;
     border: 2px solid springgreen;
+    transform: scale(1.1);
 }
 .container .sliding-door .sliding-door-label{
     display: grid;
@@ -431,7 +449,7 @@ body{
     position: relative;
     justify-content: center;
     align-items: center;
-    background-color: brown;
+    background-color: #1c1a1a;
     padding: 1%;
 }
 .container .lampu .lampu-icon{
@@ -453,9 +471,27 @@ body{
 .container .lampu .lampu-nilai{
     margin: auto ;
     text-align: center;
-    font-size: 50px;
+    font-size: 30px;
     color: #daf6ff;
+    
 }
+.container .lampu .lampu-nilai button{
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: #daf6ff;
+    transition: 0.1s;
+    margin: auto;
+    border-radius: 10%;
+}
+.container .lampu .lampu-nilai button:hover{
+    
+    border-bottom: 100px;
+    border: 2px solid springgreen;
+    transform: scale(1.1);
+} 
 .container .lampu .lampu-label{
     display: grid;
     position : absolute;
@@ -477,7 +513,7 @@ body{
     position: relative;
     justify-content: center;
     align-items: center;
-    background-color: brown;
+    background-color: #1c1a1a;
     padding: 1%;
 }
 .container .AC .AC-icon{
@@ -516,7 +552,7 @@ body{
     position: relative;
     justify-content: center;
     align-items: center;
-    background-color: rgb(3, 39, 86);
+    background-color: #1c1a1a;
     padding: 1%;
 }
 .container .music .music-icon{
@@ -555,10 +591,7 @@ body{
     color: #ece5e5;
     border-top: 2px solid rgb(249, 249, 249);
 }
-.container .item{
-  background-color: #1c1a1a; 
-  border : 1px solid white;
-}
+
 /* responsive parts */
 @media only screen and (max-width: 1200px) {
     .container{
@@ -605,7 +638,7 @@ body{
         margin-top: 20%;
     }
     }
- @media only screen and (max-width: 400px) {
+ @media only screen and (max-width: 500px) {
     .container{
             grid-template-areas: "suhu" 
                                  "humidity" 
@@ -623,6 +656,8 @@ body{
     }
 }
 /* this below just syling for testing*/
-
+/* .container .item{
+  
+} */
 
 

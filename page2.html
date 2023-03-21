@@ -42,7 +42,7 @@
 </head>
 <body>
 <!-- backlight starts here -->
-    <div class="backlight"></div>
+    <!-- <div class="backlight"></div> -->
 <!--backlight ends here  -->
 
 <!-- glass button starts here -->
@@ -142,7 +142,7 @@
                     <img src="img/hinged-door-icon.png" alt="hinged-door-icon">
                 </div>
                 <div class="hinged-door-nilai">
-                    <button>Click to Open</button>
+                    <button id="demo2" onclick="myfunction2()">Click to Open!</button>
                 </div>
                 <div class="hinged-door-label">
                             Hinged Door
@@ -155,8 +155,7 @@
                     <img src="img/hinged-door-blinds-icon.png" alt="hinged-door-blinds-icon">
                 </div>
                 <div class="hinged-door-blinds-nilai">
-                    <button>Up</button>
-                    <button>Down</button>
+                    <button id="demo" onclick="myfunction()">Open</button>
                 </div>
                 <div class="hinged-door-blinds-label">
                             Hinged Door Blinds
@@ -169,7 +168,7 @@
                     <img src="img/lampu-icon.png" alt="lampu-icon">
                 </div>
                 <div class="surgical-light-nilai">
-                    ON
+                    <button id="demo1" onclick="myfunction1()">On</button>
                 </div>
                 <div class="surgical-light-label">
                             Surgical Light
@@ -219,7 +218,52 @@
 
 <!-- scripts for temperature ends here -->
 
+<!-- trying simple scripts -->
+<script>
+    function myfunction() {
+     var demo = document.getElementById('demo');
+   
+     switch (demo.innerHTML) {
+       case 'Open':
+         demo.innerHTML = 'Close';
+         break;
+       case 'Close':
+         demo.innerHTML = 'Open';
+         break;
+       default:
+         break;
+     }
+   }
+   function myfunction1() {
+     var demo = document.getElementById('demo1');
+   
+     switch (demo.innerHTML) {
+       case 'On':
+         demo.innerHTML = 'Off';
+         break;
+       case 'Off':
+         demo.innerHTML = 'On';
+         break;
+       default:
+         break;
+     }
+   }
 
+function myfunction2() {
+     var demo = document.getElementById('demo2');
+   
+     switch (demo.innerHTML) {
+       case 'Click to Open!':
+         demo.innerHTML = 'Click to Close!';
+         break;
+       case 'Click to Close!':
+         demo.innerHTML = 'Click to Open!';
+         break;
+       default:
+         break;
+     }
+   }
+</script>
 <!-- semua javascripts kode berakhir disini -->
 </body>
 </html>

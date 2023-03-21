@@ -40,6 +40,9 @@
 <link rel="stylesheet" href="css/glass-button.css">
 <!-- glass button style ends here -->
 
+<!-- style for stopwatch -->
+<link rel="stylesheet" href="css/stopwatch.css">
+
 <!-- fonts -->
 
 <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -171,7 +174,23 @@
                 <div class="stopwatch-icon icon">
                     <img src="img/stopwatch-icon.png" alt="stopwatch-icon">
                 </div>
-                <div class="stopwatch-nilai"></div>
+                <div class="stopwatch-nilai">
+                    <main>
+                        <section>
+                          <div id="timeunit">
+                            <h1 class="timer hours">00</h1>:
+                            <h1 class="timer minutes">00</h1>:
+                            <h1 class="timer seconds">00</h1>:
+                            <h1 class="timer miliseconds">00</h1>
+                          </div>
+                          <div id="action">
+                            <button class="btn">Play</button>
+                            <button class="btn">Stop</button>
+                            <button class="btn">Reset</button>
+                          </div>
+                        </section>
+                      </main>
+                </div>
                 <div class="stopwatch-label">
                             Stopwatch
                 </div> 
@@ -183,8 +202,8 @@
                     <img src="img/sliding-door-icon.png" alt="sliding-door-icon">
                 </div>
                 <div class="sliding-door-nilai">
-                    <button>Up</button>
-                    <button>Down</button>
+                    <button id="demo" onclick="myfunction()">Open</button>
+
                 </div>
                 <div class="sliding-door-label">
                             Sliding Door
@@ -197,7 +216,7 @@
                     <img src="img/lampu-icon.png" alt="lampu-icon">
                 </div>
                 <div class="lampu-nilai">
-                    ON
+                    <button id="demo1" onclick="myfunction1()">On</button>
                 </div>
                 <div class="lampu-label">
                             Dali Light
@@ -307,8 +326,42 @@
 <!-- scripts for music player -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 <script src='js/music.js'></script>
-
 <!-- scripts for music endsplayer -->
+<!-- script for stopwatch -->
+<script src="js/stopwatch.js"></script>
+
+<!-- trying simple scripts -->
+<script>
+ function myfunction() {
+  var demo = document.getElementById('demo');
+
+  switch (demo.innerHTML) {
+    case 'Open':
+      demo.innerHTML = 'Close';
+      break;
+    case 'Close':
+      demo.innerHTML = 'Open';
+      break;
+    default:
+      break;
+  }
+}
+function myfunction1() {
+  var demo = document.getElementById('demo1');
+
+  switch (demo.innerHTML) {
+    case 'On':
+      demo.innerHTML = 'Off';
+      break;
+    case 'Off':
+      demo.innerHTML = 'On';
+      break;
+    default:
+      break;
+  }
+}
+
+</script>
 <!-- semua javascripts kode berakhir disini -->
 </body>
 </html>

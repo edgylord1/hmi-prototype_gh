@@ -18,7 +18,7 @@
     text-decoration: none;
 }
 body{
-    background-color: rgb(6, 5, 5);
+    background-image: url(../img/bg/bg5.jpg);
 }
 
 
@@ -28,8 +28,8 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:1rem 2%;
-    background-color:black;
+    padding:5px 2%;
+    background-image: url(../img/bg/bg-for-navbar.jpg);
     border-bottom: 1px solid rgb(246, 247, 248);
     position:fixed;
     top: 0;
@@ -188,7 +188,7 @@ body{
 .container .o2 .o2-nilai p{
     text-align: center;
     color: #daf6ff;
-    font-size: 40px;
+    font-size: 50px;
 }
 .container .o2 .o2-label{
     display: grid;
@@ -376,11 +376,12 @@ body{
     font-size: 30px;
     transition: border 0.1s;
     border: transparent;
-    transition: 1s;
+    transition: 0.1s;
 }
 .container .hinged-door .hinged-door-nilai button:hover{
-    transform: rotate(360deg);
-    border:2px solid #aa6927;
+    transform: scale(1.1);
+    border:2px solid #27aa6b;
+    background-color: rgb(0, 0, 0);
 
 
 }
@@ -435,11 +436,11 @@ body{
     display: block;
     width: 100px;
     height: 50px;
-    margin-top: 10%;
     background-color: transparent;
     border: 2px solid white;
     color: #daf6ff;
     transition: 0.1s;
+    border-radius: 10%;
 }
 .container .hinged-door-blinds .hinged-door-blinds-nilai button:hover{
     
@@ -492,6 +493,23 @@ body{
     text-align: center;
     font-size: 50px;
     color: #daf6ff;
+}
+.container .surgical-light .surgical-light-nilai button{
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: #daf6ff;
+    transition: 0.1s;
+    border-radius: 10%;
+    font-size: 20px;
+}
+.container .surgical-light .surgical-light-nilai button:hover{
+    
+    transform: scale(1.1);
+    border-bottom: 100px;
+    border: 2px solid rgb(19, 123, 71);
 }
 .container .surgical-light .surgical-light-label{
     display: grid;
@@ -603,6 +621,69 @@ body{
     text-align: center;
     color: #ece5e5;
     border-top: 2px solid rgb(249, 249, 249);
+}
+/* responsive parts */
+@media only screen and (max-width: 1200px) {
+    .container{
+        grid-template-areas: "light o2 n2o air"
+                              "vac hinged-door hinged-door-blinds surgical-light"
+                               "sliding-door sliding-door sliding-door-perm sliding-door-perm";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows:  50% 50% 50%;  
+        margin-top: 20%;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .container{
+        grid-template-areas: "light o2 n2o"
+                             "air vac hinged-door" 
+                             "hinged-door-blinds surgical-light sliding-door" 
+                              "sliding-door-perm sliding-door-perm sliding-door-perm";
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows:  50% 50% 50% 50%;  
+        margin-top: 20%;
+    }
+}
+@media only screen and (max-width : 700px){
+.navbar .navbar-extra a{  
+    display: none;
+}
+.navbar .navbar-logo{
+    margin: auto;
+}
+#clock{
+    display: none;
+}
+}
+@media only screen and (max-width: 600px) {
+    
+    .container{
+        grid-template-areas: "light o2"
+                            "n2o air" 
+                            "vac hinged-door" 
+                            "hinged-door-blinds surgical-light" 
+                            "sliding-door sliding-door-perm" ;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:  70% 70% 70% 70%;  
+        margin-top: 20%;
+    }
+    }
+ @media only screen and (max-width: 500px) {
+    .container{
+        grid-template-areas: "light" 
+                                "o2"
+                                "n2o" 
+                                "air" 
+                                "vac"
+                                "hinged-door" 
+                                "hinged-door-blinds"
+                                "surgical-light" 
+                                "sliding-door" 
+                                "sliding-door-perm"; 
+        grid-template-columns: 1fr;
+        grid-template-rows:  repeat(10,70%);   
+        margin-top: 20%;
+    }
 }
 /* style for sliding door perm ends here */
 .container .item{
