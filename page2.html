@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Page2</title>
 <!--Feathers Icons-->
 <script src="https://unpkg.com/feather-icons"></script>
 
@@ -16,8 +16,6 @@
 <link rel="stylesheet" href="css/backlight.css">
 <!-- style for backlight ends here -->
 
-<!-- style for temperature starts here -->
-<link rel="stylesheet" href="css/temperature.css">
 
 <!-- style for temperature ends here -->
 
@@ -73,186 +71,137 @@
 
 <!-- main contents starts here -->
     <div class="container">
-<!-- untuk pengontrol suhu/thermostat starts here -->
+<!-- light starts here -->
             <div class="light item">
                 <div class="light-icon icon">
                     <img src="img/lampu-icon.png" alt="light-icon">
                 </div>
-                <div class="light-nilai"></div>
-                
+                <div class="light-nilai">
+                    <p>1</p>
+                </div>
                 <div class="light-label">
                     Light
                 </div>
             </div>
-<!-- pengontrol suhu/thermostat ends here -->
-<!-- pengontrol humidity starts here -->
-            <div class="humidity item ">
-                <div class="humidity-icon icon">
-                    <img src="img/humidity-icon.png" alt="humidity-icon">
+<!-- light ends here -->
+<!-- o2 starts here -->
+            <div class="o2 item ">
+                <div class="o2-icon icon">
+                    <img src="img/o2-icon.png" alt="o2-icon">
                 </div>
-            <div class="humidity-nilai"></div>
-                <div class="humidity-label">
-                            Humidity
+            <div class="o2-nilai">
+                <P>0</P>
+            </div>
+                <div class="o2-label">
+                            <p>O<sub>2</sub></p>
                 </div>
             </div>
-<!-- pengontrol humidity ends here -->
-<!-- pengontrol pressure starts here -->
-            <div class="pressure item ">
-                <div class="pressure-icon icon">
-                    <img src="img/pressure-icon.png" alt="pressure-icon">
+<!--  O2 ends here -->
+<!-- N2O  starts here -->
+            <div class="n2o item ">
+                <div class="n2o-icon icon">
+                    <img src="img/o2-icon.png" alt="n2o-icon">
                 </div>
-                <div class="pressure-nilai">
-                    2.5<sup>Pa</sup>
+                <div class="n2o-nilai">
+                    0
                 </div>
-                <div class="pressure-label">
-                            Pressure
+                <div class="n2o-label">
+                            <P>N<sub>2</sub>O</P>
                 </div>
             </div>
-<!-- pengontrol pressure ends here -->
-<!-- temperature SID starts here -->
-            <div class="sid-temp item ">
-                <div class="sid-temp-icon icon">
-                    <img src="img/temperature-icon.png" alt="sid-temp-icon">
+<!-- N2O ends here -->
+<!-- air starts here -->
+            <div class="air item ">
+                <div class="air-icon icon">
+                    <img src="img/o2-icon.png" alt="air-icon">
                 </div>
-                <div class="sid-temp-nilai">
-                    25<sup>&#8451</sup>
+                <div class="air-nilai">
+                    OK
                 </div> 
-                <div class="sid-temp-label">
-                            SID Temperature
+                <div class="air-label">
+                            Air 5bar
                 </div>
             </div>
-<!-- temperature SID ends here -->
-<!--humidity SID starts here  -->
-            <div class="sid-hum item" >
-                <div class="sid-hum-icon icon">
-                    <img src="img/humidity-icon.png" alt="sid-hum-icon">
+<!--air ends here -->
+<!--Vac starts here  -->
+            <div class="vac item" >
+                <div class="vac-icon icon">
+                    <img src="img/o2-icon.png" alt="vac-icon">
                 </div>
-                <div class="sid-hum-nilai">
-                    60<sup>%RH</sup>
+                <div class="vac-nilai">
+                    OK
                 </div>
-                <div class="sid-hum-label">
-                            SID Humidity
-                </div> 
-            </div>
-<!-- humidity SID ends here -->
-<!-- stopwatch starts here -->
-            <div class="stopwatch item ">
-                <div class="stopwatch-icon icon">
-                    <img src="img/stopwatch-icon.png" alt="stopwatch-icon">
-                </div>
-                <div class="stopwatch-nilai"></div>
-                <div class="stopwatch-label">
-                            Stopwatch
+                <div class="vac-label">
+                            VAC
                 </div> 
             </div>
-<!-- stopwatch ends here -->
-<!-- sliding door starts here -->
-            <div class="sliding-door item ">
-                <div class="sliding-door-icon icon">
-                    <img src="img/sliding-door-icon.png" alt="sliding-door-icon">
+<!-- VAC ends here -->
+<!-- hinged door starts here -->
+            <div class="hinged-door item ">
+                <div class="hinged-door-icon icon">
+                    <img src="img/hinged-door-icon.png" alt="hinged-door-icon">
                 </div>
-                <div class="sliding-door-nilai">
+                <div class="hinged-door-nilai">
+                    <button>Click to Open</button>
+                </div>
+                <div class="hinged-door-label">
+                            Hinged Door
+                </div> 
+            </div>
+<!-- hinged door ends here -->
+<!-- hinged door blinded starts here  -->
+            <div class="hinged-door-blinds item ">
+                <div class="hinged-door-blinds-icon icon">
+                    <img src="img/hinged-door-blinds-icon.png" alt="hinged-door-blinds-icon">
+                </div>
+                <div class="hinged-door-blinds-nilai">
                     <button>Up</button>
                     <button>Down</button>
                 </div>
-                <div class="sliding-door-label">
-                            Sliding Door
+                <div class="hinged-door-blinds-label">
+                            Hinged Door Blinds
                 </div> 
             </div>
-<!-- sliding door ends here -->
-<!-- dali light starts here -->
+<!-- hinged door blinds  ends here -->
+<!-- surgical light starts here -->
             <div class="surgical-light item ">
                 <div class="surgical-light-icon icon">
                     <img src="img/lampu-icon.png" alt="lampu-icon">
                 </div>
-                <div class="surgical-light--nilai">
+                <div class="surgical-light-nilai">
                     ON
                 </div>
                 <div class="surgical-light-label">
                             Surgical Light
                 </div> 
             </div>
-<!-- dali light ends here -->
-<!-- AC starts here -->
-            <div class="AC item">
-                <div class="AC-icon icon">
-                    <img src="img/AC-icon.png" alt="AC-icon">
+<!-- surgical light ends here -->
+<!-- slidng door starts here -->
+            <div class="sliding-door item">
+                <div class="sliding-door-icon icon">
+                    <img src="img/sliding-door-icon.png" alt="sliding-door-icon">
                 </div>
-                <div class="AC-nilai"></div>
-                <div class="AC-label">
-                AC
+                <div class="sliding-door-nilai">
+                <p>0</p>
+                </div>
+                <div class="sliding-door-label">
+                Sliding Door
                 </div> 
             </div>
-<!-- AC ends here -->
-<!-- music starts here -->
-            <div class="music item ">
-                <div class="music-icon icon">
-                    <img src="img/music-icon.png" alt="music-icon">
+<!-- sliding door ends here -->
+<!-- sliding door perm starts here -->
+            <div class="sliding-door-perm item ">
+                <div class="sliding-door-perm-icon icon">
+                    <img src="img/sliding-door-icon.png" alt="sliding-door-icon">
                 </div>
-                <div class="music-nilai">
-                    <div id="player">
-                        <div id="player-track">
-                            <div id="album-name"></div>
-                            <div id="track-name"></div>
-                            <div id="track-time">
-                                <div id="current-time"></div>
-                                <div id="track-length"></div>
-                            </div>
-                            <div id="s-area">
-                                <div id="ins-time"></div>
-                                <div id="s-hover"></div>
-                                <div id="seek-bar"></div>
-                            </div>
-                        </div>
-                        <div id="player">
-                            <div id="player-track">
-                                <div id="album-name"></div>
-                                <div id="track-name"></div>
-                                <div id="track-time">
-                                    <div id="current-time"></div>
-                                    <div id="track-length"></div>
-                            </div>
-                            <div id="s-area">
-                                <div id="ins-time"></div>
-                                <div id="s-hover"></div>
-                                <div id="seek-bar"></div>
-                            </div>
-                        </div>
-                        <div id="player-content">
-                            <div id="album-art">
-                                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg" class="active" id="_1">
-                                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_2.jpg" id="_2">
-                                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_3.jpg" id="_3">
-                                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_4.jpg" id="_4">
-                                <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_5.jpg" id="_5">
-                                <div id="buffer-box">Buffering ...</div>
-                            </div>
-                            <div id="player-controls">
-                                <div class="control">
-                                    <div class="button" id="play-previous">
-                                        <i class="fas fa-backward"></i>
-                                    </div>
-                                </div>
-                                <div class="control">
-                                    <div class="button" id="play-pause-button">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
-                                <div class="control">
-                                    <div class="button" id="play-next">
-                                        <i class="fas fa-forward"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="sliding-door-perm-nilai">
+                <p>1</p> 
                 </div>
-                </div>
-                <div class="music-label">
-                Music
+                <div class="sliding-door-perm-label">
+                <p>Sliding Door Perm</p>
                 </div> 
             </div>
-        </div>
+<!-- sliding door perm ends here -->
     </div>
 <!-- main contents ends here -->
 

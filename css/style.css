@@ -21,8 +21,6 @@ body{
     background-color: rgb(6, 5, 5);
 }
 
-
-
 /* navbar style */
 .navbar{
     display: flex;
@@ -43,7 +41,7 @@ body{
   color:rgb(245, 247, 248); 
   margin:auto;
   background-color: transparent;
-    
+  transition: 0.2s;
 }
 .feather-32{
   width: 30px;
@@ -55,7 +53,6 @@ body{
 .navbar .navbar-logo{
     height: 65px;
     width: 200px;
-  color:rgb(246, 250, 251);
 }
 .navbar .navbar-logo img{
     width: 170px;
@@ -561,6 +558,69 @@ body{
 .container .item{
   background-color: #1c1a1a; 
   border : 1px solid white;
+}
+/* responsive parts */
+@media only screen and (max-width: 1200px) {
+    .container{
+        grid-template-areas: "suhu humidity pressure sid-temp"
+                              "sid-hum stopwatch sliding-door lampu"
+                               "AC AC music music";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows:  50% 50% 50% 50%;  
+        margin-top: 20%;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .container{
+        grid-template-areas: "suhu humidity pressure" 
+                              "sid-temp sid-hum stopwatch" 
+                               "sliding-door lampu AC" 
+                               "music music music";
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows:  70% 70% 70% 70%;  
+        margin-top: 20%;
+    }
+}
+@media only screen and (max-width : 700px){
+.navbar .navbar-extra a{  
+    display: none;
+}
+.navbar .navbar-logo{
+    margin: auto;
+}
+#clock{
+    display: none;
+}
+}
+@media only screen and (max-width: 600px) {
+    
+    .container{
+        grid-template-areas: "suhu humidity" 
+                              "pressure sid-temp"
+                               "sid-hum stopwatch" 
+                               "sliding-door lampu"
+                                "AC music";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:  70% 70% 70% 70% 70%;  
+        margin-top: 20%;
+    }
+    }
+ @media only screen and (max-width: 400px) {
+    .container{
+            grid-template-areas: "suhu" 
+                                 "humidity" 
+                                  "pressure" 
+                                  "sid-temp"
+                                   "sid-hum" 
+                                   "stopwatch" 
+                                   "sliding-door"
+                                    "lampu"
+                                    "AC" 
+                                    "music";
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(10,70%);  
+            margin-top: 20%;
+    }
 }
 /* this below just syling for testing*/
 

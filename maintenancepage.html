@@ -4,25 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Maintenance Page</title>
 <!--Feathers Icons-->
 <script src="https://unpkg.com/feather-icons"></script>
 
 <!-- my style -->
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/maintenance.css">
 <!-- end of my style -->
 
 <!-- style for backlight starts here -->
 <link rel="stylesheet" href="css/backlight.css">
 <!-- style for backlight ends here -->
 
-<!-- style for temperature starts here -->
-<link rel="stylesheet" href="css/temperature.css">
-<!-- style for nest thermostat -->
-<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&amp;display=swap'>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Unica+One&amp;display=swap'>
-<!-- end of style for nest thermostat -->
-<!-- style for temperature ends here -->
 
 <!-- style for digital clocks -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -43,7 +36,7 @@
 </head>
 <body>
 <!-- backlight starts here -->
-    <div class="backlight">BACKLIGHT</div>
+    <!-- <div class="backlight">BACKLIGHT</div> -->
 <!--backlight ends here  -->
 
 <!-- glass button starts here -->
@@ -56,43 +49,44 @@
 <!-- glass button ends here -->
 
 <!--navbar Start-->
-    <nav class="navbar">
-        <div class="navbar-extra">
-            <a href="#" id="settings" ><i data-feather="settings" class="feather-32"></i></a>
-        </div>
-        <div id="clock">
-            <p class="clock-date">{{ date }}</p>
-            <p class="clock-time">{{ time }}</p>
-        </div>
-        <div class="navbar-logo"><span>SYAS></span> Technology</div>
-  </nav>  
+<nav class="navbar">
+    <div class="navbar-extra">
+        <a href="#" id="settings" ><i data-feather="settings" class="feather-32"></i></a>
+    </div>
+    <div id="clock">
+        <p class="clock-date">{{ date }}</p>
+        <p class="clock-time">{{ time }}</p>
+    </div>
+    <div class="navbar-logo">
+        <img src="img/syas-logo.png" alt="logo">
+    </div>
+</nav>  
 <!--navbar End-->
 
 <!-- main contents starts here -->
-    <div class="container">
-            <div class="suhu item">
-                <div class="temp">
-                    <div class="temp__logo">SYAS</div>
-                    <div class="temp__comet"></div>
-                    <canvas class="temp__fizz"></canvas>
-                    <div class="temp__label">Temp</div>
-                    <div class="temp__value">0</div>
-                    <div class="temp__dial"></div>
-              </div>
-              <div class="control-suhu">
-                    Temp Control
-              </div>
-            </div>
-            <div class="humidity item ">humidity</div>
-            <div class="pressure item ">pressure</div>
-            <div class="TBA1 item ">TBA</div>
-            <div class="TBA2 item" >TBA2</div>
-            <div class="stopwatch item ">stopwatch</div>
-            <div class="sliding-door item ">door</div>
-            <div class="lampu item ">lampu</div>
-            <div class="TBA3 item">TBA3</div>
-            <div class="TBA4 item ">TBA4</div
-    </div>
+ <!-- partial:index.partial.html -->
+<div class="form-structor">
+	<div class="signup">
+		<h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
+		<div class="form-holder">
+			<input type="text" class="input" placeholder="Name" />
+			<input type="email" class="input" placeholder="Email" />
+			<input type="password" class="input" placeholder="Password" />
+		</div>
+		<button class="submit-btn">Sign up</button>
+	</div>
+	<div class="login slide-up">
+		<div class="center">
+			<h2 class="form-title" id="login"><span>or</span>Log in</h2>
+			<div class="form-holder">
+				<input type="email" class="input" placeholder="Email" />
+				<input type="password" class="input" placeholder="Password" />
+			</div>
+			<button class="submit-btn">Log in</button>
+		</div>
+	</div>
+</div>
+<!-- partial -->   
 <!-- main contents ends here -->
 
 <!-- semua javascripts kode dimulai dari sini -->
@@ -103,15 +97,8 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
 <script src="js/clock.js"></script>
 <!-- scripts for clock in navbar ends here -->
-
-<!-- scripts for temperature starts here -->
-<script src="js/temperature.js"></script>
-<!-- script for nest thermostat -->
-<script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
-<script src='https://unpkg.com/gsap@3/dist/Draggable.min.js'></script><script  src="./script.js"></script>
-<!-- script for nes thermostat ends here -->
-<!-- scripts for temperature ends here -->
-
+<!-- script for login/sign up form -->
+<script src="js/maintenance.js"></script>
 <!-- semua javascripts kode berakhir disini -->
 </body>
 </html>

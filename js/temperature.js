@@ -1,180 +1,155 @@
-document.addEventListener("DOMContentLoaded",function(){
-	const thermostat = new Thermostat(".temp");
+window.addEventListener("DOMContentLoaded",() => {
+	const thermostat = new Thermostat(".t");
 });
 
 class Thermostat {
-	constructor(el) {
-		this.el = document.querySelector(el);
-		this.temp = 0;
-		this.tempMin = 0;
-		this.tempMax = 100;
-		this.fizz = null;
-		this.fizzParticleCount = 3000;
-		this.fizzParticles = [];
-		this.fc = null;
-		this.fW = 240;
-		this.fH = 240;
-		this.fS = window.devicePixelRatio;
+	constructor(qs) {
+    console.log("创建")
+		this.el = document.querySelector(qs);
+		this.temp = 60;
+		this.scale = "f";
+		this.min = {
+			f: 60,
+			c: 0,
+			hue: 10,
+			angle: 0
+		};
+		this.max = {
+			f: 90,
+			c: 45,
+			hue: 50,
+			angle: 359
+		};
 		this.init();
 	}
 	init() {
-		window.addEventListener("keydown",this.kbdEvent.bind(this));
+		const dataAttr = "[data-drag]";
+		const dragEl = this.el?.querySelector(dataAttr);
+		const draggingClass = "t__drag--dragging";
 
-		if (this.el) {
-			this.fizz = this.el.querySelector(".temp__fizz");
-			if (this.fizz) {
-				this.fc = this.fizz.getContext("2d");
+		dragEl?.addEventListener("keydown",this.changeTemp.bind(this));
+		this.el?.addEventListener("click",this.changeScale.bind(this));
 
-				let f = this.fizzParticleCount;
-
-				while (f--) {
-					this.fizzParticles.push(
-						{
-							radius: 1, 
-							// from center to comet ring
-							minDist: this.randInt(100,115),
-							maxDist: this.randInt(85,115),
-							// rotation along the comet ring circumference
-							minRot: this.randInt(-180,180),
-							maxRot: this.randInt(-180,180),
-							// position
-							x: 0, 
-							y: 0
-						}
-					);
-				}
-
-				this.fizz.width = this.fW * this.fS;
-				this.fizz.height = this.fH * this.fS;
-				this.fc.scale(this.fS,this.fS);
-			}
-		}
-
-		Draggable.create(".temp__dial",{
+		Draggable.create(dataAttr,{
 			type: "rotation",
 			bounds: {
-				minRotation: 0, 
-				maxRotation: 359
+				minRotation: this.min.angle, 
+				maxRotation: this.max.angle
 			},
 			onDrag: () => {
-				this.tempAdjust("drag");
+				this.temp = this.tempFromDrag();
+				this.updateDisplay();
+				dragEl.classList.add(draggingClass);
+			},
+			onDragEnd: () => {
+				dragEl.classList.remove(draggingClass);
 			}
 		});
+
+		this.updateDisplay();
 	}
-	degToRad(deg) {
-		return deg * (Math.PI / 180);
+	changeTemp(e) {
+		const { key } = e;
+		const step = 1;
+		
+		// value change
+		if (key === "ArrowUp" || key === "ArrowRight")
+			this.temp += step;
+		else if (key === "ArrowDown" || key === "ArrowLeft")
+			this.temp -= step;
+
+		// keep within bounds
+		if (this.temp < this.min[this.scale])
+			this.temp = this.min[this.scale];
+		else if (this.temp > this.max[this.scale])
+			this.temp = this.max[this.scale];
+
+		this.updateDisplay();
 	}
-	randInt(min,max) {
-		return Math.round(Math.random() * (max - min)) + min;
+	changeScale(e) {
+		if (e.target.hasAttribute("data-scale") && this.scale !== e.target.value) {
+			this.scale = e.target.value;
+			const rawTemp = this.scale === "f" ? this.CToF(this.temp) : this.FToC(this.temp);
+
+			this.temp = Math.round(rawTemp);
+
+			this.updateDisplay();
+		}
+	}
+	setAriaPressed() {
+		const scale = this.el?.querySelectorAll("[data-scale]");
+
+		if (scale) {
+			Array.from(scale).forEach(s => {
+				s.setAttribute("aria-pressed",s.value === this.scale);
+			});
+		}
+	}
+	setDigits() {
+		// screen reader value
+		const sr = this.el?.querySelector("[data-temp-sr]");
+
+		if (sr)
+			sr.textContent = `${this.temp}°${this.scale.toUpperCase()}`;
+
+		// displayed value
+		const tempDigits = this.el?.querySelectorAll("[data-temp]");
+
+		if (tempDigits) {
+			const digitString = String(this.temp).split("").reverse();
+
+			Array.from(tempDigits).reverse().forEach((digit,i) => {
+				digit.textContent = digitString[i];
+			})
+		}
+	}
+	setTone() {
+		const minHue = this.min.hue;
+		const maxHue = this.max.hue;
+		const temp = this.temp;
+		const minTemp = this.min[this.scale];
+		const maxTemp = this.max[this.scale];
+		const hueDiff = maxHue - minHue;
+		const relativeHue = hueDiff * ((temp - minTemp) / (maxTemp - minTemp));
+		const hue = Math.round(maxHue - relativeHue);
+
+		this.el?.style.setProperty("--temp-hue",hue);
+	}
+	CToF(c) {
+		return c * (9 / 5) + 32;
+	}
+	FToC(f) {
+		return (f - 32) * (5 / 9);
 	}
 	angleFromMatrix(transVal) {
-		let matrixVal = transVal.split('(')[1].split(')')[0].split(','),
-			[cos1,sin] = matrixVal.slice(0,2),
-			angle = Math.round(Math.atan2(sin,cos1) * (180 / Math.PI)) * -1;
-		
-		// convert negative angles to positive
+		const matrixVal = transVal.split("(")[1].split(")")[0].split(",");
+		const [cos1,sin] = matrixVal.slice(0,2);
+		let angle = Math.round(Math.atan2(sin,cos1) * (180 / Math.PI));
+
 		if (angle < 0)
 			angle += 360;
-		
-		if (angle > 0)
-			angle = 360 - angle;
-		
+console.log("旋转角度："+angle)
 		return angle;
 	}
-	kbdEvent(e) {
-		let kc = e.keyCode;
+	tempFromDrag() {
+    console.log("通过固定的一个位置(t__drag)获取旋转角度并换算成等值数据");
+		const drag = this.el.querySelector(".t__drag")
 
-		if (kc) {
-			// up or right
-			if (kc == 38 || kc == 39)
-				this.tempAdjust("u");
-			// left or down
-			else if (kc == 37 || kc == 40)
-				this.tempAdjust("d");
+		if (drag) {
+			const dragCS = window.getComputedStyle(drag);
+			const trans = dragCS.getPropertyValue("transform");
+			const dragAngle = this.angleFromMatrix(trans);
+			const relAngle = dragAngle - this.min.angle;
+			const angleFrac = relAngle / (this.max.angle - this.min.angle);
+			const tempRange = this.max[this.scale] - this.min[this.scale];
+			const result = angleFrac * tempRange + this.min[this.scale];
+
+			return Math.round(result);
 		}
 	}
-	tempAdjust(inputVal) {
-		/*
-		inputVal can be the temp as an integer, "u" for up, 
-		"d" for down, or "drag" for dragged value
-		*/
-		if (this.el) {
-			let cs = window.getComputedStyle(this.el),
-				tempDisplay = this.el.querySelector(".temp__value"),
-				tempDial = this.el.querySelector(".temp__dial"),
-				tempRange = this.tempMax - this.tempMin,
-				hueStart = 240,
-				hueEnd = 360,
-				hueRange = hueEnd - hueStart,
-				notDragged = inputVal != "drag";
-			// input is an integer
-			if (!isNaN(inputVal)) {
-				this.temp = inputVal;
-			// input is a given direction
-			} else if (inputVal == "u") {
-				if (this.temp < this.tempMax)
-					++this.temp;
-
-			} else if (inputVal == "d") {
-				if (this.temp > this.tempMin)
-					--this.temp;
-			// GreenSock drag was used
-			} else if (inputVal ==  "drag") {
-				if (tempDial) {
-					let tempDialCS = window.getComputedStyle(tempDial),
-						trans = tempDialCS.getPropertyValue("transform"),		
-						angle = this.angleFromMatrix(trans);
-
-					this.temp = (angle / 360) * tempRange + this.tempMin;
-				}
-			}
-			// keep the temperature within bounds
-			if (this.temp < this.tempMin)
-				this.temp = this.tempMin;
-			else if (this.temp > this.tempMax)
-				this.temp = this.tempMax;
-			// use whole number temperatures for keyboard control
-			if (notDragged)
-				this.temp = Math.round(this.temp);
-
-			let relTemp = this.temp - this.tempMin,
-				frac = relTemp / tempRange,
-				angle = frac * 360,
-				newHue = hueStart + (frac * hueRange);
-
-			// fizz
-			let c = this.fc;
-			if (c) {
-				c.clearRect(0,0,this.fW,this.fH);
-				c.fillStyle = `hsla(${newHue},100%,50%,0.5)`;
-				c.globalAlpha = 0.25 + (0.75 * frac);
-
-				let centerX = this.fW / 2,
-					centerY = this.fH / 2,
-					fizzCount = this.fizzParticles.length;
-
-				this.fizzParticles.forEach((p,i) => {
-					let pd = p.minDist + frac * (p.maxDist - p.minDist),
-						pa = p.minRot + frac * (p.maxRot - p.minRot);
-
-					p.x = centerX + pd * Math.sin(this.degToRad(pa));
-					p.y = centerY + pd * Math.cos(this.degToRad(pa));
-
-					c.beginPath();
-					c.arc(p.x,p.y,p.radius,0,Math.PI * 2);
-					c.fill();
-					c.closePath();
-				});
-			}
-			// CSS variables
-			this.el.style.setProperty("--angle",angle);
-			this.el.style.setProperty("--hue",newHue);
-			// hidden dial
-			if (tempDial && notDragged)
-				tempDial.style.transform = `rotate(${angle}deg)`;
-			// display value
-			if (tempDisplay)
-				tempDisplay.textContent = Math.round(this.temp);
-		}
+	updateDisplay() {
+		this.setDigits();
+		this.setAriaPressed();
+		this.setTone();
 	}
 }
