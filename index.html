@@ -199,7 +199,7 @@
 <!-- sliding door starts here -->
             <div class="sliding-door item ">
                 <div class="sliding-door-icon icon">
-                    <img src="img/sliding-door-icon.png" alt="sliding-door-icon">
+                    <img id="sliding-door" src="img/sliding-door-icon.png" alt="sliding-door-icon">
                 </div>
                 <div class="sliding-door-nilai">
                     <button id="demo" onclick="myfunction()">Open</button>
@@ -213,7 +213,7 @@
 <!-- dali light starts here -->
             <div class="lampu item ">
                 <div class="lampu-icon icon">
-                    <img src="img/lampu-icon.png" alt="lampu-icon">
+                    <img id="lampu" src="img/lampu-mati-icon.png" alt="lampu-icon">
                 </div>
                 <div class="lampu-nilai">
                     <button id="demo1" onclick="myfunction1()">On</button>
@@ -226,9 +226,11 @@
 <!-- AC starts here -->
             <div class="AC item">
                 <div class="AC-icon icon">
-                    <img src="img/AC-icon.png" alt="AC-icon">
+                    <img id="ac" src="img/AC-icon.png" alt="AC-icon">
                 </div>
-                <div class="AC-nilai"></div>
+                <div class="AC-nilai">
+                <button id="demo2" onclick="myfunction2()">On</button>
+                </div>
                 <div class="AC-label">
                 AC
                 </div> 
@@ -334,13 +336,16 @@
 <script>
  function myfunction() {
   var demo = document.getElementById('demo');
+  var sliding=document.getElementById('sliding-door');
 
   switch (demo.innerHTML) {
     case 'Open':
       demo.innerHTML = 'Close';
+      sliding.src="img/opened-sliding-door.png"
       break;
     case 'Close':
       demo.innerHTML = 'Open';
+      sliding.src="img/sliding-door-icon.png"
       break;
     default:
       break;
@@ -348,19 +353,38 @@
 }
 function myfunction1() {
   var demo = document.getElementById('demo1');
+  var lampu = document.getElementById('lampu');
 
   switch (demo.innerHTML) {
     case 'On':
       demo.innerHTML = 'Off';
+      lampu.src='img/lampu-icon.png';
       break;
     case 'Off':
       demo.innerHTML = 'On';
+      lampu.src='img/lampu-mati-icon.png';
       break;
     default:
       break;
   }
 }
+function myfunction2() {
+  var demo = document.getElementById('demo2');
+  var ac = document.getElementById('ac');
 
+  switch (demo.innerHTML) {
+    case 'On':
+      demo.innerHTML = 'Off';
+      ac.src='img/air-conditioner.gif';
+      break;
+    case 'Off':
+      demo.innerHTML = 'On';
+      ac.src='img/AC-icon.png';
+      break;
+    default:
+      break;
+  }
+}
 </script>
 <!-- semua javascripts kode berakhir disini -->
 </body>

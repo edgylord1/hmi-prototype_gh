@@ -532,6 +532,24 @@ body{
     height: 100%;
     margin: auto;
 }
+.container .AC .AC-nilai button{
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: #daf6ff;
+    transition: 0.1s;
+    margin: auto;
+    border-radius: 10%;
+    font-size: 30px;
+}
+.container .AC .AC-nilai button:hover{
+    
+    border-bottom: 100px;
+    border: 2px solid springgreen;
+    transform: scale(1.1);
+} 
 .container .AC .AC-label{
     display: grid;
     position : absolute;

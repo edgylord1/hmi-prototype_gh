@@ -165,7 +165,7 @@
 <!-- surgical light starts here -->
             <div class="surgical-light item ">
                 <div class="surgical-light-icon icon">
-                    <img src="img/lampu-icon.png" alt="lampu-icon">
+                    <img id="lampu" src="img/lampu-icon.png" alt="lampu-icon">
                 </div>
                 <div class="surgical-light-nilai">
                     <button id="demo1" onclick="myfunction1()">On</button>
@@ -234,20 +234,23 @@
          break;
      }
    }
-   function myfunction1() {
-     var demo = document.getElementById('demo1');
-   
-     switch (demo.innerHTML) {
-       case 'On':
-         demo.innerHTML = 'Off';
-         break;
-       case 'Off':
-         demo.innerHTML = 'On';
-         break;
-       default:
-         break;
-     }
-   }
+function myfunction1() {
+var demo = document.getElementById('demo1');
+var lampu = document.getElementById('lampu');
+
+switch (demo1.innerHTML) {
+    case 'On':
+      demo1.innerHTML = 'Off';
+      lampu.src='img/lampu-icon.png';
+      break;
+    case 'Off':
+      demo1.innerHTML = 'On';
+      lampu.src='img/lampu-mati-icon.png';
+      break;
+    default:
+      break;
+  } 
+}
 
 function myfunction2() {
      var demo = document.getElementById('demo2');
