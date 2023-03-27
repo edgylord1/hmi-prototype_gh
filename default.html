@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Page</title>
+<!--Feathers Icons-->
+<script src="https://unpkg.com/feather-icons"></script>
+
+<!-- my style -->
+<link rel="stylesheet" href="css/default.css">
+<!-- end of my style -->
+
+
+<!-- style for digital clocks -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Share+Tech+Mono'>
+<!-- style for digital clocks ends here -->
+
+<!-- glass button style starts here -->
+<link rel="stylesheet" href="css/glass-button.css">
+<!-- glass button style ends here -->
+
+<!-- fonts -->
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@1,400;1,700&display=swap" rel="stylesheet"> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<!-- end fonts -->
+</head>
+<body>
+
+<!-- glass button starts here -->
+<footer class="footer">
+    <div class="glass">
+        <div class="btn prev"><a href="maintenancepage.html">Prev</a></div>
+        <div class="btn next"><a href="page2.html" >Next</a></div>
+    </div>
+</footer>
+<!-- glass button ends here -->
+
+<!--navbar Start-->
+    <nav class="navbar">
+        <div class="navbar-extra">
+            <a href="#" id="settings" ><i data-feather="settings" class="feather-32"></i></a>
+        </div>
+        <div id="clock">
+            <p class="clock-date">{{ date }}</p>
+            <p class="clock-time">{{ time }}</p>
+        </div>
+        <div class="navbar-logo">
+            <img src="img/syas-logo.png" alt="logo">
+        </div>
+  </nav>  
+<!--navbar End-->
+
+<!-- main contents starts here -->
+<div class="column1">
+    <header>
+        <button>Click to Close!</button>
+    </header>
+    <div class="temperature">
+        <p>Temperature</p>
+        <div class="temp-nilai">
+            <main>25<sup>&#8451</sup></main>
+        </div> 
+    </div>
+    <div class="humidity">
+        <p>Humidity</p>
+        <div class="hum-nilai">
+            <main>
+                66.3<sup>%</sup>
+            </main>
+        </div>
+    </div>
+    <div class="pressure">
+        <p>Pressure</p>
+        <div class="pressure-nilai">
+            <main>8.4<sup>pa</sup></main>
+        </div>
+    </div>
+</div>
+<div class="column2">
+    <div class="header">
+        <button>Click to Close!</button>
+    </div>
+    <div class="sliding-door">
+        <p>Sliding Door</p>
+    </div>
+    <div class="swing-door">
+        <p>Swing Door</p>
+    </div>
+    <div class="lamp-control">
+        <p>Lamp Controls</p>
+        <button>Lamp 1 On</button>
+        <button>Lamp 2 On</button>
+        <button>Lamp 3 On</button>
+    </div>
+</div>
+<!-- main contents ends here -->
+
+<!-- semua javascripts kode dimulai dari sini -->
+    <!--feathers Icons-->
+    <script>feather.replace()</script>
+
+<!-- scripts for clock in navbar start here -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
+<script src="js/clock.js"></script>
+<!-- scripts for clock in navbar ends here -->
+
+
+<!-- trying simple scripts -->
+<script>
+ function myfunction() {
+  var demo = document.getElementById('demo');
+  var sliding=document.getElementById('sliding-door');
+
+  switch (demo.innerHTML) {
+    case 'Open':
+      demo.innerHTML = 'Close';
+      sliding.src="img/opened-sliding-door.png"
+      break;
+    case 'Close':
+      demo.innerHTML = 'Open';
+      sliding.src="img/sliding-door-icon.png"
+      break;
+    default:
+      break;
+  }
+}
+function myfunction1() {
+  var demo = document.getElementById('demo1');
+  var lampu = document.getElementById('lampu');
+
+  switch (demo.innerHTML) {
+    case 'On':
+      demo.innerHTML = 'Off';
+      lampu.src='img/lampu-icon.png';
+      break;
+    case 'Off':
+      demo.innerHTML = 'On';
+      lampu.src='img/lampu-mati-icon.png';
+      break;
+    default:
+      break;
+  }
+}
+function myfunction2() {
+  var demo = document.getElementById('demo2');
+  var ac = document.getElementById('ac');
+
+  switch (demo.innerHTML) {
+    case 'On':
+      demo.innerHTML = 'Off';
+      ac.src='img/air-conditioner.gif';
+      break;
+    case 'Off':
+      demo.innerHTML = 'On';
+      ac.src='img/AC-icon.png';
+      break;
+    default:
+      break;
+  }
+}
+</script>
+<!-- semua javascripts kode berakhir disini -->
+</body>
+</html>
