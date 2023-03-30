@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Page</title>
+<!--Feathers Icons-->
+<script src="https://unpkg.com/feather-icons"></script>
+
+<!-- my style -->
+<link rel="stylesheet" href="css/test.css">
+<!-- end of my style -->
+
+
+<!-- style for digital clocks -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Share+Tech+Mono'>
+<!-- style for digital clocks ends here -->
+
+<!-- glass button style starts here -->
+<link rel="stylesheet" href="css/glass-button.css">
+<!-- glass button style ends here -->
+
+<!-- fonts -->
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@1,400;1,700&display=swap" rel="stylesheet"> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<!-- end fonts -->
+</head>
+<body>
+
+<!-- glass button starts here -->
+<footer class="footer">
+    <div class="glass">
+        <div class="btn prev"><a href="maintenancepage.html">Prev</a></div>
+        <div class="btn next"><a href="page2.html" >Next</a></div>
+    </div>
+</footer>
+<!-- glass button ends here -->
+
+<!--navbar Start-->
+    <nav class="navbar">
+        <div class="navbar-extra">
+            <a href="#" id="settings" ><i data-feather="settings" class="feather-32"></i></a>
+        </div>
+        <div id="clock">
+            <p class="clock-date">{{ date }}</p>
+            <p class="clock-time">{{ time }}</p>
+        </div>
+        <div class="navbar-logo">
+            <img src="img/syas-logo.png" alt="logo">
+        </div>
+  </nav>  
+<!--navbar End-->
+
+<!-- main contents starts here -->
+<div class="column1">
+    <header>
+        <button>Click to Close!</button>
+    </header>
+    <div class="temperature">
+        <p>Temperature</p>
+        <div class="temp-nilai">
+            <main>25<sup>&#8451</sup></main>
+        </div> 
+    </div>
+    <div class="humidity">
+        <p>Humidity</p>
+        <div class="hum-nilai">
+            <main>
+                66.3<sup>%</sup>
+            </main>
+        </div>
+    </div>
+    <div class="pressure">
+        <p>Pressure</p>
+        <div class="pressure-nilai">
+            <main>8.4<sup>pa</sup></main>
+        </div>
+    </div>
+</div>
+<div class="column2">
+    <div class="header">
+        <button>Click to Close!</button>
+    </div>
+    <div class="sliding-door">
+        <p>Sliding Door</p>
+    </div>
+    <div class="swing-door">
+        <p>Swing Door</p>
+    </div>
+    <div class="lamp-control">
+        <p>Lamp Controls</p>
+        <button>Lamp 1 On</button>
+        <button>Lamp 2 On</button>
+        <button>Lamp 3 On</button>
+    </div>
+</div>
+<!-- main contents ends here -->
+
+<!-- main contents starts here -->
+<div class="container">
+    <!-- untuk pengontrol suhu/thermostat starts here -->
+                <div class="suhu item">
+                    <div class="suhu-icon icon">
+                        <img src="img/temperature-icon.png" alt="temp-icon">
+                    </div>
+                    <div class="suhu-nilai">
+                        <div class="t">
+                            <div class="t__inner">
+                                <div class="t__value">
+                                    <span class="t__digit" data-temp>-</span><span class="t__digit" data-temp>-</span><span class="t__degree">°</span>
+                                </div>
+                                <button class="t__drag" type="button" data-drag>
+                                    <span class="t__sr" data-temp-sr>--</span>
+                                </button>
+                                <svg class="t__arrows" width="256px" height="256px" viewBox="0 0 256 256">
+                                    <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.2">
+                                        <polyline points="227.893 117.393 238.499 128 249.107 117.392"/>
+                                        <polyline points="5.393 117.393 16 128 26.608 117.392"/>
+                                        <path d="M16,128a111.25,111.25,0,0,1,222.5,0"/>
+                                    </g>
+                                </svg>
+                                <span class="t__units">
+                                    <button class="t__unit" type="button" value="f" aria-label="Fahrenheit" data-scale>F</button>
+                                    <button class="t__unit" type="button" value="c" aria-label="Celsius" data-scale>C</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="suhu-label">
+                        Temp Control
+                    </div>
+                </div>
+    <!-- pengontrol suhu/thermostat ends here -->
+    <!-- pengontrol humidity starts here -->
+                <div class="humidity item ">
+                    <div class="humidity-icon icon">
+                        <img src="img/humidity-icon.png" alt="humidity-icon">
+                    </div>
+                <div class="humidity-nilai"></div>
+                    <div class="humidity-label">
+                                Humidity
+                    </div>
+                </div>
+    <!-- pengontrol humidity ends here -->
+    <!-- pengontrol pressure starts here -->
+                <div class="pressure item ">
+                    <div class="pressure-icon icon">
+                        <img src="img/pressure-icon.png" alt="pressure-icon">
+                    </div>
+                    <div class="pressure-nilai">
+                        2.5<sup>Pa</sup>
+                    </div>
+                    <div class="pressure-label">
+                                Pressure
+                    </div>
+                </div>
+    <!-- pengontrol pressure ends here -->
+    <!-- temperature SID starts here -->
+                <div class="sid-temp item ">
+                    <div class="sid-temp-icon icon">
+                        <img src="img/temperature-icon.png" alt="sid-temp-icon">
+                    </div>
+                    <div class="sid-temp-nilai">
+                        25<sup>&#8451</sup>
+                    </div> 
+                    <div class="sid-temp-label">
+                                SID Temperature
+                    </div>
+                </div>
+    <!-- temperature SID ends here -->
+    <!--humidity SID starts here  -->
+                <div class="sid-hum item" >
+                    <div class="sid-hum-icon icon">
+                        <img src="img/humidity-icon.png" alt="sid-hum-icon">
+                    </div>
+                    <div class="sid-hum-nilai">
+                        60<sup>%RH</sup>
+                    </div>
+                    <div class="sid-hum-label">
+                                SID Humidity
+                    </div> 
+                </div>
+    <!-- humidity SID ends here -->
+    <!-- stopwatch starts here -->
+                <div class="stopwatch item ">
+                    <div class="stopwatch-icon icon">
+                        <img src="img/stopwatch-icon.png" alt="stopwatch-icon">
+                    </div>
+                    <div class="stopwatch-nilai">
+                        <main>
+                            <section>
+                              <div id="timeunit">
+                                <h1 class="timer hours">00</h1>:
+                                <h1 class="timer minutes">00</h1>:
+                                <h1 class="timer seconds">00</h1>:
+                                <h1 class="timer miliseconds">00</h1>
+                              </div>
+                              <div id="action">
+                                <button class="btn">Play</button>
+                                <button class="btn">Stop</button>
+                                <button class="btn">Reset</button>
+                              </div>
+                            </section>
+                          </main>
+                    </div>
+                    <div class="stopwatch-label">
+                                Stopwatch
+                    </div> 
+                </div>
+    <!-- stopwatch ends here -->
+    <!-- sliding door starts here -->
+                <div class="sliding-door item ">
+                    <div class="sliding-door-icon icon">
+                        <img id="sliding-door" src="img/sliding-door-icon.png" alt="sliding-door-icon">
+                    </div>
+                    <div class="sliding-door-nilai">
+                        <button id="demo" onclick="myfunction()">Open</button>
+    
+                    </div>
+                    <div class="sliding-door-label">
+                                Sliding Door
+                    </div> 
+                </div>
+    <!-- sliding door ends here -->
+    <!-- dali light starts here -->
+                <div class="lampu item ">
+                    <div class="lampu-icon icon">
+                        <img id="lampu" src="img/lampu-mati-icon.png" alt="lampu-icon">
+                    </div>
+                    <div class="lampu-nilai">
+                        <button id="demo1" onclick="myfunction1()">On</button>
+                    </div>
+                    <div class="lampu-label">
+                                Dali Light
+                    </div> 
+                </div>
+    <!-- dali light ends here -->
+    <!-- AC starts here -->
+                <div class="AC item">
+                    <div class="AC-icon icon">
+                        <img id="ac" src="img/AC-icon.png" alt="AC-icon">
+                    </div>
+                    <div class="AC-nilai">
+                    <button id="demo2" onclick="myfunction2()">On</button>
+                    </div>
+                    <div class="AC-label">
+                    AC
+                    </div> 
+                </div>
+    <!-- AC ends here -->
+    <!-- music starts here -->
+                <div class="music item ">
+                    <div class="music-icon icon">
+                        <img src="img/music-icon.png" alt="music-icon">
+                    </div>
+                    <div class="music-nilai">
+                        <div id="player">
+                            <div id="player-track">
+                                <div id="album-name"></div>
+                                <div id="track-name"></div>
+                                <div id="track-time">
+                                    <div id="current-time"></div>
+                                    <div id="track-length"></div>
+                                </div>
+                                <div id="s-area">
+                                    <div id="ins-time"></div>
+                                    <div id="s-hover"></div>
+                                    <div id="seek-bar"></div>
+                                </div>
+                            </div>
+                            <div id="player">
+                                <div id="player-track">
+                                    <div id="album-name"></div>
+                                    <div id="track-name"></div>
+                                    <div id="track-time">
+                                        <div id="current-time"></div>
+                                        <div id="track-length"></div>
+                                </div>
+                                <div id="s-area">
+                                    <div id="ins-time"></div>
+                                    <div id="s-hover"></div>
+                                    <div id="seek-bar"></div>
+                                </div>
+                            </div>
+                            <div id="player-content">
+                                <div id="album-art">
+                                    <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg" class="active" id="_1">
+                                    <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_2.jpg" id="_2">
+                                    <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_3.jpg" id="_3">
+                                    <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_4.jpg" id="_4">
+                                    <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_5.jpg" id="_5">
+                                    <div id="buffer-box">Buffering ...</div>
+                                </div>
+                                <div id="player-controls">
+                                    <div class="control">
+                                        <div class="button" id="play-previous">
+                                            <i class="fas fa-backward"></i>
+                                        </div>
+                                    </div>
+                                    <div class="control">
+                                        <div class="button" id="play-pause-button">
+                                            <i class="fas fa-play"></i>
+                                        </div>
+                                    </div>
+                                    <div class="control">
+                                        <div class="button" id="play-next">
+                                            <i class="fas fa-forward"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="music-label">
+                    Music
+                    </div> 
+                </div>
+            </div>
+        </div>
+    <!-- main contents ends here -->
+<!-- semua javascripts kode dimulai dari sini -->
+    <!--feathers Icons-->
+    <script>feather.replace()</script>
+
+<!-- scripts for clock in navbar start here -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
+<script src="js/clock.js"></script>
+<!-- scripts for clock in navbar ends here -->
+
+
+<!-- trying simple scripts -->
+<script>
+ function myfunction() {
+  var demo = document.getElementById('demo');
+  var sliding=document.getElementById('sliding-door');
+
+  switch (demo.innerHTML) {
+    case 'Open':
+      demo.innerHTML = 'Close';
+      sliding.src="img/opened-sliding-door.png"
+      break;
+    case 'Close':
+      demo.innerHTML = 'Open';
+      sliding.src="img/sliding-door-icon.png"
+      break;
+    default:
+      break;
+  }
+}
+function myfunction1() {
+  var demo = document.getElementById('demo1');
+  var lampu = document.getElementById('lampu');
+
+  switch (demo.innerHTML) {
+    case 'On':
+      demo.innerHTML = 'Off';
+      lampu.src='img/lampu-icon.png';
+      break;
+    case 'Off':
+      demo.innerHTML = 'On';
+      lampu.src='img/lampu-mati-icon.png';
+      break;
+    default:
+      break;
+  }
+}
+function myfunction2() {
+  var demo = document.getElementById('demo2');
+  var ac = document.getElementById('ac');
+
+  switch (demo.innerHTML) {
+    case 'On':
+      demo.innerHTML = 'Off';
+      ac.src='img/air-conditioner.gif';
+      break;
+    case 'Off':
+      demo.innerHTML = 'On';
+      ac.src='img/AC-icon.png';
+      break;
+    default:
+      break;
+  }
+}
+</script>
+<!-- semua javascripts kode berakhir disini -->
+</body>
+</html>

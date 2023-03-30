@@ -88,6 +88,213 @@ body{
 /* navbar icons end here */
 /* navbar style ends here */
 
+/* column1 styling */
+.column1{
+    position: absolute;
+    left :1%;   
+    bottom: 25%;
+    top: 25%;
+    right: 85%;
+    background-color:rgb(87, 95, 95) ;
+    border-radius: 2%;
+    padding:1%;
+}
+.column1 header{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    border: 1px solid white;
+    border-radius: 3%;
+    margin-bottom: 10%;
+    transition: 0.1s;
+}
+.column1 header:hover{
+    transform: scale(1.1);
+    border: 1px solid green;
+}
+.column1 header:hover button{
+    color: white;
+}
+.column1 button{
+    padding: 5px;
+    background-color: transparent;
+}
+.column1 .temperature{
+    background-color: burlywood;
+    height: 20%;
+    border-radius: 3%;
+    padding: 1%;
+}
+.column1 .temperature p{
+    margin: 2%;
+    padding: 2%;
+    text-align: center;
+    border-bottom: 1px solid white;
+    border-radius: 5%;
+}
+.column1 .temp-nilai{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    padding: 2%;
+    height: 60%;
+    border-radius: 5%;
+    font-size: 25px;
+}
+/* temperature styling ends here */
+/* humidity styling starts here */
+.column1 .humidity{
+    background-color: burlywood;
+    height: 20%;
+    border-radius: 3%;
+    padding: 1%;
+    margin-top: 10%;
+}
+.column1 .humidity p{
+    margin: 2%;
+    padding: 2%;
+    text-align: center;
+    border-bottom: 1px solid white;
+    border-radius: 5%;
+}
+.column1 .hum-nilai{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    padding: 2%;
+    height: 60%;
+    border-radius: 5%;
+    font-size: 25px;
+}
+/* humidity styling ends here */
+/* pressure styling */
+.column1 .pressure{
+    background-color: burlywood;
+    height: 20%;
+    border-radius: 3%;
+    padding: 1%;
+    margin-top: 10%;
+}
+.column1 .pressure p:nth-child(1){
+    margin: 2%;
+    padding: 2%;
+    text-align: center;
+    border-radius: 5%;
+    border-bottom: 1px solid white;
+}
+.column1 .pressure-nilai{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    padding: 2%;
+    height: 60%;
+    border-radius: 5%;
+    font-size: 25px;
+}
+/* pressure styling ends here */
+/* column1 styling ends here */
+/* column2 styling */
+.column2{
+    display: grid;
+    position: absolute;
+    right :1%;
+    bottom: 11%;
+    top: 11%;
+    left: 85%;
+    padding: 1%;
+    background-color:rgb(87, 95, 95) ;
+    border-radius: 2%;
+    margin: auto;
+    grid-template-areas:"header"
+                        "sliding-door"
+                        "swing-door"
+                        "lamp-control";
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.25fr 1fr 1fr 1fr;
+}
+.column2 .header{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-area: header;
+    border: 1px solid white;
+    margin: 2%;
+    font-size: 18px;
+    border-radius: 3%;
+    transition: 0.1s;
+}
+.column2 .header:hover{
+    transform: scale(1.1);
+    border: 1px solid green;
+}
+.column2 .header:hover button{
+    color: white;
+}
+.column2 .header button{
+    background-color: transparent;
+}
+.column2 .sliding-door{
+    grid-area: sliding-door;
+    position: relative;
+    background-color: darkgray;
+    margin: 2%;
+    border-radius: 10%;
+}
+.column2 .sliding-door p{
+    height: 20%;
+    border-bottom: 1px solid white;
+    text-align: center;
+    padding-top: 3%;
+    margin: 2%;
+    border-radius: 5%;
+}
+.column2 .swing-door{
+    grid-area: swing-door;
+    background-color: darksalmon;
+    margin: 2%;
+    border-radius: 5%;
+}
+.column2 .swing-door p{
+    height: 20%;
+    border-bottom: 1px solid white;
+    text-align: center;
+    padding-top: 3%;
+    margin: 2%;
+    border-radius: 5%;
+}
+.column2 .lamp-control{
+    grid-area: lamp-control;
+    background-color: firebrick;
+    border-radius: 5%;
+    margin: 2%;
+    
+}
+.column2 .lamp-control p{
+    height: 20%;
+    border-bottom: 1px solid white;
+    text-align: center;
+    padding-top: 3%;
+    margin: 2%;
+    border-radius: 3%;
+}
+.column2 .lamp-control button{
+    display: block;
+    margin : 7% 10% 5% 10%;
+    height: 15%;
+    border-radius: 3%;
+    font-size: 15px;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 4%;
+
+}
+/* column2 styling ends here */
+
 .container {
     position: relative;
     width: 90%;
@@ -542,7 +749,6 @@ body{
     transition: 0.1s;
     margin: auto;
     border-radius: 10%;
-    font-size: 30px;
     
 }
 .container .AC .AC-nilai button:hover{
@@ -675,8 +881,9 @@ body{
     }
 }
 /* this below just syling for testing*/
-/* .container .item{
-  
-} */
-
-
+.column1{
+    display: none;
+}
+.column2{
+    display: none;
+}

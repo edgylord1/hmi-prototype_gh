@@ -19,6 +19,7 @@
 	width: 15%;
 	height: 60%;
     background-color: transparent;
+	cursor: pointer;
 }
 .footer .glass .next {
     position: absolute;
@@ -26,9 +27,10 @@
     width: 15%;
 	height: 60%;
     background-color: transparent;
+	cursor: pointer;
 }
 
-.footer .btn a{
+.footer .btn span{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -52,10 +54,10 @@
 	transition: 0.5s;
 	backdrop-filter: blur(15px);
 }
-.footer .btn:hover a {
+.footer .btn:hover span {
 	letter-spacing: 3px;
 }
-.footer .btn a::before {
+.footer .btn span::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -67,7 +69,7 @@
 	transition: 0.5s;
 	filter: blur(0px);
 }
-.footer .btn:hover a::before {
+.footer .btn:hover span::before {
 	transform: skewX(45deg) translate(200px);
 }
 .footer .btn::before {
