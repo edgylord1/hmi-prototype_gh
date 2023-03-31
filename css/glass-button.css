@@ -12,6 +12,23 @@
     background-image: url(../img/bg/bg-for-footer.jpg);
 	z-index: 99;
 	padding: 1%;
+	border-top: 1px solid white;
+}
+
+.footer .home{
+	margin: auto;
+}
+.footer .home img{
+	transition: 0.1s;
+}
+.footer .home img:hover{
+	transform: scale(1.2);
+}
+	
+.footer .home img{
+	position: absolute;
+	width: 50px;
+	left: 50%;
 }
 .footer .glass .prev {
     position: absolute;

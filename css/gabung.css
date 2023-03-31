@@ -335,6 +335,159 @@ body{
 
 
 
+/* style for room info starts here */
+.room-info {
+    position: relative;
+    width: 70%;
+    height: 40rem;
+    margin:auto;
+    margin-top: 7%;
+    display: none;
+    grid-template-areas: "hvac-status hvac-mode hvac-press"
+                         "disturb disturb disturb"
+                         "timer timer timer"
+                         "nama-dokter nama-pasien jenis-operasi";
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr 0.6fr 1.4fr 1fr;
+    background-color: #1f1d1c;
+}
+.room-info .item{
+    padding:2%;
+    margin : 2%;
+    border-radius: 3%;
+    border : 1px solid white;
+}
+.room-info .item .header{
+    border-bottom: 1px solid white;
+    text-align: center;
+    padding: 1%;
+}
+.room-info .hvac-status{
+    grid-area: hvac-status;
+    background-color: teal;
+}
+.room-info .hvac-status .main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+.room-info .hvac-status .main button{
+   width: 150px;
+    padding: 3%;
+   margin: auto;
+   border-radius: 5%;
+   font-size: 25px; 
+}
+.room-info .hvac-mode{
+    grid-area: hvac-mode;
+    background-color: teal;
+}
+.room-info .hvac-mode .main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+.room-info .hvac-mode .main button{
+   width: 150px;
+    padding: 3%;
+   margin: auto;
+   border-radius: 5%;
+   font-size: 25px; 
+}
+.room-info .hvac-press{
+    grid-area:hvac-press;
+    background-color: teal;
+}
+.room-info .hvac-press .main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+.room-info .hvac-press .main button{
+   width: 150px;
+    padding: 3%;
+   margin: auto;
+   border-radius: 5%;
+   font-size: 25px; 
+}
+.room-info .disturb{
+    grid-area: disturb;
+    background-color: teal;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.room-info .disturb  button{
+    width: 120px;
+    padding: 5%;
+    font-size: 25px;
+    border-radius: 5%;
+}
+.room-info .timer{
+    grid-area: timer;
+    background-color: teal;
+}
+.room-info .nama-dokter{
+    grid-area: nama-dokter;
+    background-color: teal;
+}
+.room-info .nama-dokter .main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+.room-info .nama-dokter .main #nama-dokter{
+    height: 30px;
+    font-size: 20px;
+}
+.room-info .nama-pasien{
+    background-color: teal;
+}
+.room-info .nama-pasien .main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+.room-info .nama-pasien .main #nama-pasien{
+    height: 30px;
+    font-size: 20px;
+}
+.room-info .jenis-operasi{
+    background-color: teal;
+}
+.room-info .jenis-operasi .main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+.room-info .jenis-operasi .main #jenis-operasi{
+    height: 30px;
+    font-size: 20px;
+}
+
+/* styling for room info ends here */
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -348,7 +501,6 @@ body{
     height: 35rem;
     margin:auto;
     margin-top: 10%;
-    display: grid;
     grid-template-areas: "suhu humidity pressure sid-temp sid-hum"
                          "stopwatch sliding-door lampu AC music";
     grid-template-columns: repeat(5,1fr);
@@ -953,7 +1105,6 @@ body{
     height: 35rem;
     margin:auto;
     margin-top: 10%;
-    display: grid;
     grid-template-areas: "light o2 n2o air vac"
                          "hinged-door hinged-door-blinds surgical-light sliding-door sliding-door-perm";
     grid-template-columns: repeat(5,1fr);
@@ -1549,3 +1700,14 @@ body{
   border : 1px solid white;
 }
 
+.container.active {
+    display: grid;
+  }
+  
+  .container2.active {
+    display: grid;
+  }
+
+.room-info.active{
+    display: grid;
+}
