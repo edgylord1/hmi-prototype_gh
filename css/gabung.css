@@ -19,6 +19,13 @@
 }
 body{
     background-image: url(../img/bg/bg3.jpg);
+    position: relative;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
 }
 
 /* navbar style */
@@ -482,8 +489,102 @@ body{
 
 
 
-
-
+/* styling for login page starts here */
+.login-box {
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/bg/bg4.jpg);
+    color: #555555;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+/* kalau tombol setting diklik */
+  
+  .login-div {
+    margin:7%;
+    width: 470px;
+    height: 560px;
+    padding: 60px 35px 35px 35px;
+    border-radius: 40px;
+    
+    background: #ecf0f3;
+    box-shadow: 13px 13px 20px #cbced1, -1px -1px 1px #e1dfdf;
+  }
+  
+  .logo {
+    background: url("../img/syas-icon-only.jpg");
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 
+      /* logo shadow */ 0px 0px 2px #5f5f5f,
+      /* offset */ 0px 0px 0px 5px #ecf0f3, 
+      /*bottom right */ 8px 8px 15px #a7aaaf,
+      /* top left */ -8px -8px 15px #ffffff;
+  }
+  .title {
+    text-align: center;
+    font-size: 28px;
+    padding-top: 20px;
+    letter-spacing: 0.5px;
+  }
+  
+  .sub-title {
+    text-align: center;
+    font-size: 15px;
+    padding-top: 7px;
+    letter-spacing: 3px;
+  }
+  
+  .fields {
+    width: 100%;
+    padding: 75px 5px 5px 5px;
+  }
+  .fields input {
+    outline: none;
+    background: none;
+    border: none;   
+    box-shadow: none;
+    font-size: 18px;
+    color: #555;
+    padding: 10px 10px 10px 5px;
+   
+  }
+  .username,
+  .password {
+    padding: 0 30px;
+    margin-bottom: 30px;
+    border-radius: 25px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+  }
+  
+  .signin-button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Lato", sans-serif;
+    color: #fff;
+    text-align: center;
+    background: #8e9291;
+    box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+    transition: 0.5s;
+  }
+  .signin-button:hover {
+    background: #2fdbb6;
+  }
+  .signin-button:active {
+    background: #1da88a;
+  }
+ 
+  
+  /* style for login/maintenance page ends here */
 
 
 
@@ -506,7 +607,9 @@ body{
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: 50% 50%;
     display: none;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 
 .container .item{
     padding:2%;
@@ -514,6 +617,36 @@ body{
     border-radius: 3%;
     background-color: #1c1a1a; 
     border : 1px solid white;
+}
+
+.container .label{
+    display: grid;
+    position : absolute;
+    align-items: center;
+     bottom: 0;
+    height: 20%;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    color: #ece5e5;
+    border-top: 2px solid rgb(249, 249, 249);
+
+}
+.container .icon{
+    position: absolute;
+    top: 0;
+    height: 20%;
+    width: 100%;
+    padding : 2%;
+    margin: auto;
+    color: #daf6ff;
+    border-bottom: 2px solid white;
+}
+
+.container .icon img{
+    display: block;
+    height: 100%;
+    margin:auto;
 }
 
 /* styling for temperature control starts  here */
@@ -525,33 +658,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.container .suhu .suhu-label{
-    display: grid;
-    position : absolute;
-    align-items: center;
-     bottom: 0;
-    height: 20%;
-    width: 100%;
-    text-align: center;
-    margin: auto;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
-.container .suhu .suhu-icon{
-    position: absolute;
-    top: 0;
-    height: 20%;
-    width: 100%;
-    padding : 2%;
-    margin: auto;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container .suhu .suhu-icon img{
-    display: block;
-    height: 100%;
-    margin:auto;
-}
+
 /* styling for temperature control ends  here */
 /* syling for humidity control starts here */
 .container .humidity{
@@ -562,33 +669,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.container .humidity .humidity-label{
-    display: grid;
-    position : absolute;
-    align-items: center;
-     bottom: 0;
-    height: 20%;
-    width: 100%;
-    text-align: center;
-    margin: auto;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
-.container .humidity .humidity-icon{
-    position: absolute;
-    top: 0;
-    height: 20%;
-    width: 100%;
-    padding : 2%;
-    margin: auto;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container .humidity .humidity-icon img{
-    display: block;
-    height: 100%;
-    margin:auto;
-}
+
 /* syling for humidity control ends here */
 /* styling for pressure control starts here */
 .container .pressure{ 
@@ -599,21 +680,6 @@ body{
     justify-content: center;
     align-items: center;
 }
-.container .pressure .pressure-icon{
-    position: absolute;
-    top: 0;
-    height: 20%;
-    width: 100%;
-    padding : 2%;
-    margin: auto;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container .pressure .pressure-icon img{
-    display: block;
-    height: 100%;
-    margin:auto;
-} 
 .container .pressure .pressure-nilai{
     margin: auto ;
     text-align: center;
@@ -624,18 +690,7 @@ body{
     font-size: 20px;
     vertical-align: super;
 }
-.container .pressure .pressure-label{
-    display: grid;
-    position : absolute;
-    align-items: center;
-     bottom: 0;
-    height: 20%;
-    width: 100%;
-    text-align: center;
-    margin: auto;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
 /* styling for pressure control ends here */   
 /* styling for sid-temp starts here */
 .container .sid-temp{
@@ -647,21 +702,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.container .sid-temp .sid-temp-icon{
-    position: absolute;
-    top: 0;
-    height: 20%;
-    width: 100%;
-    padding : 2%;
-    margin: auto;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container .sid-temp .sid-temp-icon img{
-    display: block;
-    height: 100%;
-    margin:auto;
-}
+
 .container .sid-temp .sid-temp-nilai{
     margin: auto ;
     text-align: center;
@@ -669,19 +710,7 @@ body{
     color: #daf6ff;
 }
 
-.container .sid-temp .sid-temp-label{
-    display: grid;
-    align-items: center;
-    position : absolute;
-    bottom: 0;
-    height: 20%;
-    width: 100%;
-    text-align: center;
-    margin: auto;
-    overflow: hidden;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
 /* styling for sid-temp ends here */
 /* styling for sid-hum starts here */
 .container .sid-hum{
@@ -693,22 +722,7 @@ body{
     background-color: #1c1a1a;
     padding: 1%;
 }
-.container .sid-hum .sid-hum-icon{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 20%;
-    padding:2%;
-    margin: auto;
-    background-color: transparent;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container .sid-hum .sid-hum-icon img{
-    display: block;
-    height: 100%;
-    margin:auto;
-}
+
 .container .sid-hum .sid-hum-nilai{
     margin: auto ;
     text-align: center;
@@ -719,18 +733,7 @@ body{
     font-size: 20px;
     vertical-align: super;
 }
-.container .sid-hum .sid-hum-label{
-    position : absolute;
-    display: grid;
-    align-items: center;
-    bottom: 0;
-    height: 20%;
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
   
 /*styling for sid-hum ends here  */
 /* styling for stopwatch starts here */
@@ -745,23 +748,11 @@ body{
     border-radius: 3%;
 }
 .container .stopwatch .stopwatch-icon{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 20%;
-    padding:2%;
-    margin: auto;
     background-color: #1c1a1a;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-    border-radius: 3%;
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
 }
-.container .stopwatch .stopwatch-icon img{
-    display: block;
-    height: 100%;
-    margin: auto;
 
-}
 .container .stopwatch .stopwatch-nilai{
     position: relative;
     display: grid;
@@ -772,19 +763,10 @@ body{
     background-color:transparent;
     border-radius: 3%;
 }
-.container .stopwatch .stopwatch-label{
-    display: grid;
-    position : absolute;
-    align-items: center;
-    justify-content: center;
-    bottom: 0;
-    height: 20%;
-    width: 100%;;
-    text-align: center;
-    margin: auto;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
+.container .stopwatch .label{
     background-color: #1c1a1a;
+    border-bottom-left-radius: 8%;
+    border-bottom-right-radius: 8%;
 }
 /* styling for stopwatch ends here */
 /* styling for sliding-door starts here */
@@ -797,22 +779,7 @@ body{
     background-color: #1c1a1a;
     padding: 1%;
 }
-.container .sliding-door .sliding-door-icon{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 20%;
-    padding:2%;
-    margin: auto;
-    background-color: transparent;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container .sliding-door .sliding-door-icon img{
-    display: block;
-    height: 100%;
-    margin: auto;
-}
+
 .container .sliding-door .sliding-door-nilai{
     display: grid;
     position: absolute;
@@ -837,19 +804,7 @@ body{
     border: 2px solid springgreen;
     transform: scale(1.1);
 }
-.container .sliding-door .sliding-door-label{
-    display: grid;
-    position : absolute;
-    align-items: center;
-    justify-content: center;
-    bottom: 0;
-    height: 20%;
-    width: 100%;;
-    text-align: center;
-    margin: auto;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
 /* styling for sliding door ends here */
 /* styling for lampu starts here */
 .container .lampu{
@@ -861,22 +816,7 @@ body{
     background-color: #1c1a1a;
     padding: 1%;
 }
-.container .lampu .lampu-icon{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 20%;
-    padding:2%;
-    margin: auto;
-    background-color: transparent;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container .lampu .lampu-icon img{
-    display: block;
-    height: 100%;
-    margin: auto;
-}
+
 .container .lampu .lampu-nilai{
     margin: auto ;
     text-align: center;
@@ -901,19 +841,7 @@ body{
     border: 2px solid springgreen;
     transform: scale(1.1);
 } 
-.container .lampu .lampu-label{
-    display: grid;
-    position : absolute;
-    align-items: center;
-    justify-content: center;
-    bottom: 0;
-    height: 20%;
-    width: 100%;;
-    text-align: center;
-    margin: auto;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
 /* style for lampu ends here */
 /* style for AC starts here */
 .container .AC{
@@ -924,22 +852,6 @@ body{
     align-items: center;
     background-color: #1c1a1a;
     padding: 1%;
-}
-.container .AC .AC-icon{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 20%;
-    padding:2%;
-    margin: auto;
-    background-color: transparent;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container .AC .AC-icon img{
-    display: block;
-    height: 100%;
-    margin: auto;
 }
 .container .AC .AC-nilai button{
     display: block;
@@ -960,19 +872,7 @@ body{
     border: 2px solid springgreen;
     transform: scale(1.1);
 } 
-.container .AC .AC-label{
-    display: grid;
-    position : absolute;
-    align-items: center;
-    justify-content: center;
-    bottom: 0;
-    height: 20%;
-    width: 100%;;
-    text-align: center;
-    margin: auto;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
 /* style for AC ends here */
 .container .music{
     grid-area: music;
@@ -983,21 +883,7 @@ body{
     background-color: #1c1a1a;
     padding: 1%;
 }
-.container .music .music-icon{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 20%;
-    padding:2%;
-    margin: auto;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container .music .music-icon img{
-    display: block;
-    height: 100%;
-    margin: auto;
-}
+
 .container .music .music-nilai{
     display: block;
     position: absolute;
@@ -1007,21 +893,13 @@ body{
     align-items: center;
     padding: 2%;
 }
-.container .music .music-label{
-    display: grid;
-    position : absolute;
-    justify-content: center;
-    align-items: center;
-    bottom: 0;
-    height: 20%;
-    width: 100%;;
-    text-align: center;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
 
 /* responsive parts */
 @media only screen and (max-width: 1200px) {
+    body{
+        overflow: visible;
+    }
     .container{
         grid-template-areas: "suhu humidity pressure sid-temp"
                               "sid-hum stopwatch sliding-door lampu"
@@ -1116,6 +994,34 @@ body{
     margin : 2%;
     border-radius: 3%;
 }
+.container2 .label2{
+    display: grid;
+    position : absolute;
+    align-items: center;
+     bottom: 0;
+    height: 20%;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    color: #ece5e5;
+    border-top: 2px solid rgb(249, 249, 249);
+}
+
+.container2 .icon2{
+    position: absolute;
+    top: 0;
+    height: 20%;
+    width: 100%;
+    padding : 2%;
+    margin: auto;
+    color: #daf6ff;
+    border-bottom: 2px solid white;
+}
+.container2 .icon2 img{
+    display: block;
+    height: 100%;
+    margin:auto;
+}
 
 /* styling for light starts  here */
 .container2 .light{
@@ -1126,21 +1032,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.container2 .light .light-icon{
-    position: absolute;
-    top: 0;
-    height: 20%;
-    width: 100%;
-    padding : 2%;
-    margin: auto;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container2 .light .light-icon img{
-    display: block;
-    height: 100%;
-    margin:auto;
-}
+
 .container2 .light .light-nilai{
     display: grid;
     justify-content: center;
@@ -1151,18 +1043,8 @@ body{
     color: #daf6ff;
     font-size: 40px;
 }
-.container2 .light .light-label{
-    display: grid;
-    position : absolute;
-    align-items: center;
-     bottom: 0;
-    height: 20%;
-    width: 100%;
-    text-align: center;
-    margin: auto;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
+
 /* styling for light ends  here */
 /* syling for o2 starts here */
 .container2 .o2{
@@ -1173,21 +1055,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.container2 .o2 .o2-icon{
-    position: absolute;
-    top: 0;
-    height: 20%;
-    width: 100%;
-    padding : 2%;
-    margin: auto;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container2 .o2 .o2-icon img{
-    display: block;
-    height: 100%;
-    margin:auto;
-}
+
 .container2 .o2 .o2-nilai{
     display: grid;
     justify-content: center;
@@ -1198,18 +1066,7 @@ body{
     color: #daf6ff;
     font-size: 50px;
 }
-.container2 .o2 .o2-label{
-    display: grid;
-    position : absolute;
-    align-items: center;
-     bottom: 0;
-    height: 20%;
-    width: 100%;
-    text-align: center;
-    margin: auto;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
 
 /* syling for o2 ends here */
 /* styling for N2O starts here */
@@ -1221,21 +1078,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.container2 .n2o .n2o-icon{
-    position: absolute;
-    top: 0;
-    height: 20%;
-    width: 100%;
-    padding : 2%;
-    margin: auto;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container2 .n2o .n2o-icon img{
-    display: block;
-    height: 100%;
-    margin:auto;
-} 
+
 .container2 .n2o .n2o-nilai{
     margin: auto ;
     text-align: center;
@@ -1246,18 +1089,7 @@ body{
     font-size: 20px;
     vertical-align: super;
 }
-.container2 .n2o .n2o-label{
-    display: grid;
-    position : absolute;
-    align-items: center;
-     bottom: 0;
-    height: 20%;
-    width: 100%;
-    text-align: center;
-    margin: auto;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
 /* styling N2O ends here */   
 /* air starts here */
 .container2 .air{
@@ -1269,21 +1101,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.container2 .air .air-icon{
-    position: absolute;
-    top: 0;
-    height: 20%;
-    width: 100%;
-    padding : 2%;
-    margin: auto;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container2 .air .air-icon img{
-    display: block;
-    height: 100%;
-    margin:auto;
-}
+
 .container2 .air .air-nilai{
     margin: auto ;
     text-align: center;
@@ -1291,19 +1109,7 @@ body{
     color: #daf6ff;
 }
 
-.container2 .air .air-label{
-    display: grid;
-    align-items: center;
-    position : absolute;
-    bottom: 0;
-    height: 20%;
-    width: 100%;
-    text-align: center;
-    margin: auto;
-    overflow: hidden;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
 /* styling air ends here */
 /* styling for vac starts here */
 .container2 .vac{
@@ -1315,22 +1121,7 @@ body{
     background-color: brown;
     padding: 1%;
 }
-.container2 .vac .vac-icon{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 20%;
-    padding:2%;
-    margin: auto;
-    background-color: transparent;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container2 .vac .vac-icon img{
-    display: block;
-    height: 100%;
-    margin:auto;
-}
+
 .container2 .vac .vac-nilai{
     margin: auto ;
     text-align: center;
@@ -1338,18 +1129,7 @@ body{
     color: #daf6ff;
 }
 
-.container2 .vac .vac-label{
-    position : absolute;
-    display: grid;
-    align-items: center;
-    bottom: 0;
-    height: 20%;
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
   
 /*styling for Vac ends here  */
 /* styling for hinged-door starts here */
@@ -1361,23 +1141,7 @@ body{
     align-items: center;
     padding: 1%;
 }
-.container2 .hinged-door .hinged-door-icon{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 20%;
-    padding:2%;
-    margin: auto;
-    background-color: transparent;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container2 .hinged-door .hinged-door-icon img{
-    display: block;
-    height: 100%;
-    margin: auto;
 
-}
 .container2 .hinged-door .hinged-door-nilai button{
     background-color: transparent;
     color: #daf6ff;
@@ -1393,19 +1157,7 @@ body{
 
 
 }
-.container2 .hinged-door .hinged-door-label{
-    display: grid;
-    position : absolute;
-    align-items: center;
-    justify-content: center;
-    bottom: 0;
-    height: 20%;
-    width: 100%;;
-    text-align: center;
-    margin: auto;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
 /* styling for stopwatch ends here */
 /* styling for hinged door blinds starts here */
 .container2 .hinged-door-blinds{
@@ -1417,22 +1169,7 @@ body{
     background-color: brown;
     padding: 1%;
 }
-.container2 .hinged-door-blinds .hinged-door-blinds-icon{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 20%;
-    padding:2%;
-    margin: auto;
-    background-color: transparent;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container2 .hinged-door-blinds .hinged-door-blinds-icon img{
-    display: block;
-    height: 100%;
-    margin: auto;
-}
+
 .container2 .hinged-door-blinds .hinged-door-blinds-nilai{
     display: grid;
     position: absolute;
@@ -1456,19 +1193,7 @@ body{
     border-bottom: 100px;
     border: 2px solid rgb(19, 123, 71);
 }
-.container2 .hinged-door-blinds .hinged-door-blinds-label{
-    display: grid;
-    position : absolute;
-    align-items: center;
-    justify-content: center;
-    bottom: 0;
-    height: 20%;
-    width: 100%;;
-    text-align: center;
-    margin: auto;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
 /* styling for hinged door blinds ends here */
 /* styling for surgical light starts here */
 .container2 .surgical-light{
@@ -1480,22 +1205,7 @@ body{
     background-color: brown;
     padding: 1%;
 }
-.container2 .surgical-light .surgical-light-icon{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 20%;
-    padding:2%;
-    margin: auto;
-    background-color: transparent;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container2 .surgical-light .surgical-light-icon img{
-    display: block;
-    height: 100%;
-    margin: auto;
-}
+
 .container2 .surgical-light .surgical-light-nilai{
     margin: auto ;
     text-align: center;
@@ -1519,19 +1229,7 @@ body{
     border-bottom: 100px;
     border: 2px solid rgb(19, 123, 71);
 }
-.container2 .surgical-light .surgical-light-label{
-    display: grid;
-    position : absolute;
-    align-items: center;
-    justify-content: center;
-    bottom: 0;
-    height: 20%;
-    width: 100%;;
-    text-align: center;
-    margin: auto;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
 /* style for surgical light ends here */
 /* style for sliding door starts here */
 .container2 .sliding-door{
@@ -1543,22 +1241,7 @@ body{
     background-color: brown;
     padding: 1%;
 }
-.container2 .sliding-door .sliding-door-icon{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 20%;
-    padding:2%;
-    margin: auto;
-    background-color: transparent;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container2 .sliding-door .sliding-door-icon img{
-    display: block;
-    height: 100%;
-    margin: auto;
-}
+
 .container2 .sliding-door .sliding-door-nilai{
     display: grid;
     justify-content: center;
@@ -1569,19 +1252,7 @@ body{
     color: #daf6ff;
     font-size: 40px;
 }
-.container2 .sliding-door .sliding-door-label{
-    display: grid;
-    position : absolute;
-    align-items: center;
-    justify-content: center;
-    bottom: 0;
-    height: 20%;
-    width: 100%;;
-    text-align: center;
-    margin: auto;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
 /* style for sliding door ends here */
 /* style for sliding door perm starts here */
 .container2 .sliding-door-perm{
@@ -1593,21 +1264,7 @@ body{
     background-color: rgb(3, 39, 86);
     padding: 1%;
 }
-.container2 .sliding-door-perm .sliding-door-perm-icon{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 20%;
-    padding:2%;
-    margin: auto;
-    color: #daf6ff;
-    border-bottom: 2px solid white;
-}
-.container2 .sliding-door-perm .sliding-door-perm-icon img{
-    display: block;
-    height: 100%;
-    margin: auto;
-}
+
 .container2 .sliding-door-perm .sliding-door-perm-nilai{
     display: grid;
     justify-content: center;
@@ -1618,18 +1275,7 @@ body{
     color: #daf6ff;
     font-size: 40px;
 }
-.container2 .sliding-door-perm .sliding-door-perm-label{
-    display: grid;
-    position : absolute;
-    justify-content: center;
-    align-items: center;
-    bottom: 0;
-    height: 20%;
-    width: 100%;;
-    text-align: center;
-    color: #ece5e5;
-    border-top: 2px solid rgb(249, 249, 249);
-}
+
 /* responsive parts */
 @media only screen and (max-width: 1200px) {
     .container2{
@@ -1678,7 +1324,7 @@ body{
     }
  @media only screen and (max-width: 500px) {
     .container2{
-        width: 100px;
+        width: 300px;
         grid-template-areas: "light" 
                                 "o2"
                                 "n2o" 
@@ -1704,10 +1350,15 @@ body{
     display: grid;
   }
   
-  .container2.active {
+.container2.active {
     display: grid;
   }
 
 .room-info.active{
     display: grid;
+}
+.login-box.active{
+    display: flex;
+    position: relative;
+    z-index: 90;
 }

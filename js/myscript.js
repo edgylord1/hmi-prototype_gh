@@ -7,6 +7,9 @@ const column2 = document.querySelector('.column2');
 const manual = document.querySelector('.manual-settings');
 const homeBtn = document.querySelector('.home');
 const roomInfo = document.querySelector('.room-info');
+const setting = document.getElementById('settings');
+const boxLogin = document.querySelector('.login-box');
+
 
   manual.addEventListener('click', function(){
     roomInfo.classList.display='none';
@@ -47,7 +50,7 @@ nextBtn.addEventListener('click', function(event){
     }
 });
 
- 
+
 
 // Event listener pertama: Menangani ketika kedua kolom disembunyikan
 prevBtn.addEventListener('click', function(event){
@@ -89,4 +92,12 @@ prevBtn.addEventListener('click', function(event){
       container2.classList.remove('active');
       container.classList.remove('active');
       roomInfo.classList.remove('active');
+      boxLogin.classList.remove('active');
     });
+
+// tombol setting untuk login
+setting.addEventListener('click',function(event){
+    
+    boxLogin.classList.toggle('active');
+    
+})

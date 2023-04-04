@@ -1,3 +1,7 @@
+
+
+
+// fungsi untuk mengubah icon sliding door mennjadi bukak tutup
 function sliding() {
     const bSldDoor = document.getElementById('bSldDoor');
     const sliding=document.getElementById('sliding-door-icon');
@@ -15,6 +19,13 @@ function sliding() {
               break;
     }})
 }
+
+
+
+
+
+
+// fungsi untuk mengubah icon dali light untuk hidup atau mati
 function dali() {
     const bDali = document.getElementById('bDali');
     const dali=document.getElementById('dali-icon');
@@ -32,6 +43,31 @@ function dali() {
               break;
     }})
 }
+
+
+
+
+
+
+// fungsi untuk mengubah icon surgical light hidup atau mati
+function surgicalLight() {
+  const bSurgical = document.getElementById('bSurgicalLight');
+  const surgical=document.getElementById('lampu-img');
+  bSurgical.addEventListener('click',function(){
+      switch (bSurgical.innerHTML) {
+          case 'On':
+            bSurgical.innerHTML = 'Off';
+            surgical.src="img/lampu-icon.png"
+            break;
+          case 'Off':
+            bSurgical.innerHTML = 'On';
+            surgical.src="img/lampu-mati-icon.png"
+            break;
+          default:
+            break;
+  }})
+}
 sliding();
-dali()
+dali();
+surgicalLight();
   
