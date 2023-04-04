@@ -1,0 +1,1364 @@
+:root{
+    --primary: #aa6927;
+    --bg : #000000;
+    --border-color:2px solid #ece5e5;
+    /* --container-margin:5%;
+    --container-padding:2%; */
+    /* font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Raleway', sans-serif; */
+    font-family: 'Orbitron', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline:none;
+    border:none;
+    text-decoration: none;
+}
+body{
+    background-image: url(../img/bg/bg3.jpg);
+    position: relative;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+}
+
+/* navbar style */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px 2%;
+    background-image: url(../img/bg/bg-for-navbar.jpg);
+    border-bottom: 1px solid rgb(246, 247, 248);
+    position:fixed;
+    top: 0;
+    left:0;
+    right:0;
+    z-index: 9999;
+}
+
+/* navbar icons here */
+.navbar .navbar-extra a{
+  color:rgb(245, 247, 248); 
+  margin:auto;
+  background-color: transparent;
+  transition: 0.2s;
+}
+.feather-32{
+  width: 30px;
+  height: 30px;
+}
+.navbar .navbar-extra a:hover{
+    color:#363333;
+}
+.navbar .navbar-logo{
+    height: 65px;
+    width: 200px;
+}
+.navbar .navbar-logo img{
+    width: 170px;
+    margin: auto;
+}
+/* style for clocks from codepen starts here */
+#clock {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #daf6ff;
+  text-shadow: 0 0 20px rgb(3, 209, 255), 0 0 20px rgba(10, 175, 230, 0);
+}
+#clock .clock-time {
+  letter-spacing: 0.05em;
+  font-size: 15px;
+  padding: 5px 0;
+}
+#clock .clock-date {
+  letter-spacing: 0.1em;
+  font-size: 20px;
+}
+#clock .clock-text {
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  padding: 20px 0 0;
+}
+/* style for clocks from codepen ends here */
+/* navbar icons end here */
+/* navbar style ends here */
+
+
+/* styling for default page starts here */
+
+/* column1 styling */
+.column1{
+    display: grid;
+    position: absolute;
+    left :1%;
+    bottom: 11%;
+    top: 11%;
+    right: 85%;
+    padding: 1%;
+    background-color:rgb(87, 95, 95) ;
+    border-radius: 2%;
+    margin: auto;
+    grid-template-areas:"header"
+                        "temperature"
+                        "humidity"
+                        "pressure"
+                        "manual-settings";
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.25fr 1fr 1fr 1fr 0.25fr;
+}
+.column1 .header{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-area: header;
+    border: 1px solid white;
+    background-color: burlywood;
+    margin: 2%;
+    font-size: 18px;
+    border-radius: 3%;
+    transition: 0.1s;
+}
+.column1 header:hover{
+    transform: scale(1.1);
+    border: 1px solid green;
+}
+.column1 header:hover button{
+    color: white;
+}
+.column1 button{
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    margin: auto;
+    border-radius: 5%;
+    background-color: burlywood;
+
+}
+.column1 .temperature{
+    grid-area: temperature;
+    background-color: burlywood;
+    position: relative;;
+    margin: 2%;
+    border-radius: 10%;
+}
+.column1 .temperature p{
+    margin: 2%;
+    padding: 2%;
+    text-align: center;
+    border-bottom: 1px solid white;
+    border-radius: 5%;
+}
+.column1 .temp-nilai{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    padding: 2%;
+    height: 60%;
+    border-radius: 5%;
+    font-size: 25px;
+}
+/* temperature styling ends here */
+/* humidity styling starts here */
+.column1 .humidity{
+    grid-area: humidity;
+    background-color: burlywood;
+    position: relative;;
+    margin: 2%;
+    border-radius: 10%;
+}
+.column1 .humidity p{
+    margin: 2%;
+    padding: 2%;
+    text-align: center;
+    border-bottom: 1px solid white;
+    border-radius: 5%;
+}
+.column1 .hum-nilai{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    padding: 2%;
+    height: 60%;
+    border-radius: 5%;
+    font-size: 25px;
+}
+/* humidity styling ends here */
+/* pressure styling */
+.column1 .pressure{
+    grid-area: pressure;
+    background-color: burlywood;
+    background-color: burlywood;
+    position: relative;;
+    margin: 2%;
+    border-radius: 10%;
+}
+.column1 .pressure p:nth-child(1){
+    margin: 2%;
+    padding: 2%;
+    text-align: center;
+    border-radius: 5%;
+    border-bottom: 1px solid white;
+}
+.column1 .pressure-nilai{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    padding: 2%;
+    height: 60%;
+    border-radius: 5%;
+    font-size: 25px;
+}
+.column1 .manual-settings{
+    grid-area: manual-settings;
+    background-color: burlywood;
+    position: relative;;
+    margin: 2%;
+    border-radius: 10%;
+    text-align: center;
+    font-size: 15px;
+}
+/* pressure styling ends here */
+/* column1 styling ends here */
+
+
+
+
+/* column2 styling */
+.column2{
+    display: grid;
+    position: absolute;
+    right :1%;
+    bottom: 11%;
+    top: 11%;
+    left: 85%;
+    padding: 1%;
+    background-color:rgb(87, 95, 95) ;
+    border-radius: 2%;
+    margin: auto;
+    grid-template-areas:"header"
+                        "sliding-door"
+                        "swing-door"
+                        "lamp-control";
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.25fr 1fr 1fr 1fr;
+}
+.column2 .header{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-area: header;
+    border: 1px solid white;
+    margin: 2%;
+    font-size: 18px;
+    border-radius: 3%;
+    transition: 0.1s;
+}
+.column2 .header:hover{
+    transform: scale(1.1);
+    border: 1px solid green;
+}
+.column2 .header:hover button{
+    color: white;
+}
+.column2 .header button{
+    background-color: transparent;
+}
+.column2 .sliding-door{
+    grid-area: sliding-door;
+    position: relative;
+    background-color: darkgray;
+    margin: 2%;
+    border-radius: 10%;
+}
+.column2 .sliding-door p{
+    height: 20%;
+    border-bottom: 1px solid white;
+    text-align: center;
+    padding-top: 3%;
+    margin: 2%;
+    border-radius: 5%;
+}
+.column2 .swing-door{
+    grid-area: swing-door;
+    background-color: darksalmon;
+    margin: 2%;
+    border-radius: 5%;
+}
+.column2 .swing-door p{
+    height: 20%;
+    border-bottom: 1px solid white;
+    text-align: center;
+    padding-top: 3%;
+    margin: 2%;
+    border-radius: 5%;
+}
+.column2 .lamp-control{
+    grid-area: lamp-control;
+    background-color: firebrick;
+    border-radius: 5%;
+    margin: 2%;
+    
+}
+.column2 .lamp-control p{
+    height: 20%;
+    border-bottom: 1px solid white;
+    text-align: center;
+    padding-top: 3%;
+    margin: 2%;
+    border-radius: 3%;
+}
+.column2 .lamp-control button{
+    display: block;
+    margin : 7% 10% 5% 10%;
+    height: 15%;
+    border-radius: 3%;
+    font-size: 15px;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 4%;
+
+}
+/* column2 styling ends here */
+
+
+/* styling for default page ends here */
+
+
+
+
+
+/* style for room info starts here */
+.room-info {
+    position: relative;
+    width: 70%;
+    height: 40rem;
+    margin:auto;
+    margin-top: 7%;
+    display: none;
+    grid-template-areas: "hvac-status hvac-mode hvac-press"
+                         "disturb disturb disturb"
+                         "timer timer timer"
+                         "nama-dokter nama-pasien jenis-operasi";
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr 0.6fr 1.4fr 1fr;
+    background-color: #1f1d1c;
+}
+.room-info .item{
+    padding:2%;
+    margin : 2%;
+    border-radius: 3%;
+    border : 1px solid white;
+}
+.room-info .item .header{
+    border-bottom: 1px solid white;
+    text-align: center;
+    padding: 1%;
+}
+.room-info .hvac-status{
+    grid-area: hvac-status;
+    background-color: teal;
+}
+.room-info .hvac-status .main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+.room-info .hvac-status .main button{
+   width: 150px;
+    padding: 3%;
+   margin: auto;
+   border-radius: 5%;
+   font-size: 25px; 
+}
+.room-info .hvac-mode{
+    grid-area: hvac-mode;
+    background-color: teal;
+}
+.room-info .hvac-mode .main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+.room-info .hvac-mode .main button{
+   width: 150px;
+    padding: 3%;
+   margin: auto;
+   border-radius: 5%;
+   font-size: 25px; 
+}
+.room-info .hvac-press{
+    grid-area:hvac-press;
+    background-color: teal;
+}
+.room-info .hvac-press .main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+.room-info .hvac-press .main button{
+   width: 150px;
+    padding: 3%;
+   margin: auto;
+   border-radius: 5%;
+   font-size: 25px; 
+}
+.room-info .disturb{
+    grid-area: disturb;
+    background-color: teal;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.room-info .disturb  button{
+    width: 120px;
+    padding: 5%;
+    font-size: 25px;
+    border-radius: 5%;
+}
+.room-info .timer{
+    grid-area: timer;
+    background-color: teal;
+}
+.room-info .nama-dokter{
+    grid-area: nama-dokter;
+    background-color: teal;
+}
+.room-info .nama-dokter .main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+.room-info .nama-dokter .main #nama-dokter{
+    height: 30px;
+    font-size: 20px;
+}
+.room-info .nama-pasien{
+    background-color: teal;
+}
+.room-info .nama-pasien .main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+.room-info .nama-pasien .main #nama-pasien{
+    height: 30px;
+    font-size: 20px;
+}
+.room-info .jenis-operasi{
+    background-color: teal;
+}
+.room-info .jenis-operasi .main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+.room-info .jenis-operasi .main #jenis-operasi{
+    height: 30px;
+    font-size: 20px;
+}
+
+/* styling for room info ends here */
+
+
+
+
+/* styling for login page starts here */
+.login-box {
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/bg/bg4.jpg);
+    color: #555555;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+/* kalau tombol setting diklik */
+  
+  .login-div {
+    margin:7%;
+    width: 470px;
+    height: 560px;
+    padding: 60px 35px 35px 35px;
+    border-radius: 40px;
+    
+    background: #ecf0f3;
+    box-shadow: 13px 13px 20px #cbced1, -1px -1px 1px #e1dfdf;
+  }
+  
+  .logo {
+    background: url("../img/syas-icon-only.jpg");
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 
+      /* logo shadow */ 0px 0px 2px #5f5f5f,
+      /* offset */ 0px 0px 0px 5px #ecf0f3, 
+      /*bottom right */ 8px 8px 15px #a7aaaf,
+      /* top left */ -8px -8px 15px #ffffff;
+  }
+  .title {
+    text-align: center;
+    font-size: 28px;
+    padding-top: 20px;
+    letter-spacing: 0.5px;
+  }
+  
+  .sub-title {
+    text-align: center;
+    font-size: 15px;
+    padding-top: 7px;
+    letter-spacing: 3px;
+  }
+  
+  .fields {
+    width: 100%;
+    padding: 75px 5px 5px 5px;
+  }
+  .fields input {
+    outline: none;
+    background: none;
+    border: none;   
+    box-shadow: none;
+    font-size: 18px;
+    color: #555;
+    padding: 10px 10px 10px 5px;
+   
+  }
+  .username,
+  .password {
+    padding: 0 30px;
+    margin-bottom: 30px;
+    border-radius: 25px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+  }
+  
+  .signin-button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Lato", sans-serif;
+    color: #fff;
+    text-align: center;
+    background: #8e9291;
+    box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+    transition: 0.5s;
+  }
+  .signin-button:hover {
+    background: #2fdbb6;
+  }
+  .signin-button:active {
+    background: #1da88a;
+  }
+ 
+  
+  /* style for login/maintenance page ends here */
+
+
+
+
+
+
+
+
+
+
+/* style for container 1 starts here */
+.container {
+    position: relative;
+    width: 90%;
+    height: 35rem;
+    margin:auto;
+    margin-top: 10%;
+    grid-template-areas: "suhu humidity pressure sid-temp sid-hum"
+                         "stopwatch sliding-door lampu AC music";
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 50% 50%;
+    display: none;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+.container .item{
+    padding:2%;
+    margin : 2%;
+    border-radius: 3%;
+    background-color: #1c1a1a; 
+    border : 1px solid white;
+}
+
+.container .label{
+    display: grid;
+    position : absolute;
+    align-items: center;
+     bottom: 0;
+    height: 20%;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    color: #ece5e5;
+    border-top: 2px solid rgb(249, 249, 249);
+
+}
+.container .icon{
+    position: absolute;
+    top: 0;
+    height: 20%;
+    width: 100%;
+    padding : 2%;
+    margin: auto;
+    color: #daf6ff;
+    border-bottom: 2px solid white;
+}
+
+.container .icon img{
+    display: block;
+    height: 100%;
+    margin:auto;
+}
+
+/* styling for temperature control starts  here */
+.container .suhu{
+    grid-area: suhu;
+    display: grid;
+    position: relative;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* styling for temperature control ends  here */
+/* syling for humidity control starts here */
+.container .humidity{
+    grid-area: humidity;
+    display: grid;
+    position: relative;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* syling for humidity control ends here */
+/* styling for pressure control starts here */
+.container .pressure{ 
+    grid-area: pressure;
+    display: grid;
+    position: relative;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+}
+.container .pressure .pressure-nilai{
+    margin: auto ;
+    text-align: center;
+    font-size: 50px;
+    color: #daf6ff;
+}
+.container .pressure .pressure-nilai sup{
+    font-size: 20px;
+    vertical-align: super;
+}
+
+/* styling for pressure control ends here */   
+/* styling for sid-temp starts here */
+.container .sid-temp{
+    display: grid;
+    position: relative;
+    grid-area: sid-temp;
+    background-color: #1c1a1a;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .sid-temp .sid-temp-nilai{
+    margin: auto ;
+    text-align: center;
+    font-size: 50px;
+    color: #daf6ff;
+}
+
+
+/* styling for sid-temp ends here */
+/* styling for sid-hum starts here */
+.container .sid-hum{
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    grid-area: sid-hum;
+    background-color: #1c1a1a;
+    padding: 1%;
+}
+
+.container .sid-hum .sid-hum-nilai{
+    margin: auto ;
+    text-align: center;
+    font-size: 50px;
+    color: #daf6ff;
+}
+.container .sid-hum .sid-hum-nilai sup{
+    font-size: 20px;
+    vertical-align: super;
+}
+
+  
+/*styling for sid-hum ends here  */
+/* styling for stopwatch starts here */
+.container .stopwatch{
+    grid-area: stopwatch;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    background-color: #c4c0c0;
+    border-radius: 3%;
+}
+.container .stopwatch .stopwatch-icon{
+    background-color: #1c1a1a;
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
+}
+
+.container .stopwatch .stopwatch-nilai{
+    position: relative;
+    display: grid;
+    width: 200px;
+    height: 150px;
+    margin: 0;
+    padding: 0;
+    background-color:transparent;
+    border-radius: 3%;
+}
+.container .stopwatch .label{
+    background-color: #1c1a1a;
+    border-bottom-left-radius: 8%;
+    border-bottom-right-radius: 8%;
+}
+/* styling for stopwatch ends here */
+/* styling for sliding-door starts here */
+.container .sliding-door{
+    grid-area: sliding-door;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c1a1a;
+    padding: 1%;
+}
+
+.container .sliding-door .sliding-door-nilai{
+    display: grid;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+.container .sliding-door .sliding-door-nilai button{
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: #daf6ff;
+    transition: 0.1s;
+    border-radius: 10%;
+}
+.container .sliding-door .sliding-door-nilai button:hover{
+    
+    border-bottom: 100px;
+    border: 2px solid springgreen;
+    transform: scale(1.1);
+}
+
+/* styling for sliding door ends here */
+/* styling for lampu starts here */
+.container .lampu{
+    grid-area: lampu;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c1a1a;
+    padding: 1%;
+}
+
+.container .lampu .lampu-nilai{
+    margin: auto ;
+    text-align: center;
+    font-size: 30px;
+    color: #daf6ff;
+    
+}
+.container .lampu .lampu-nilai button{
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: #daf6ff;
+    transition: 0.1s;
+    margin: auto;
+    border-radius: 10%;
+}
+.container .lampu .lampu-nilai button:hover{
+    
+    border-bottom: 100px;
+    border: 2px solid springgreen;
+    transform: scale(1.1);
+} 
+
+/* style for lampu ends here */
+/* style for AC starts here */
+.container .AC{
+    grid-area: AC;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c1a1a;
+    padding: 1%;
+}
+.container .AC .AC-nilai button{
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: #daf6ff;
+    transition: 0.1s;
+    margin: auto;
+    border-radius: 10%;
+    font-size: 30px;
+    
+}
+.container .AC .AC-nilai button:hover{
+    
+    border-bottom: 100px;
+    border: 2px solid springgreen;
+    transform: scale(1.1);
+} 
+
+/* style for AC ends here */
+.container .music{
+    grid-area: music;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c1a1a;
+    padding: 1%;
+}
+
+.container .music .music-nilai{
+    display: block;
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+
+
+/* responsive parts */
+@media only screen and (max-width: 1200px) {
+    body{
+        overflow: visible;
+    }
+    .container{
+        grid-template-areas: "suhu humidity pressure sid-temp"
+                              "sid-hum stopwatch sliding-door lampu"
+                               "AC AC music music";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows:  50% 50% 50% 50%;  
+        margin-top: 20%;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .container{
+        grid-template-areas: "suhu humidity pressure" 
+                              "sid-temp sid-hum stopwatch" 
+                               "sliding-door lampu AC" 
+                               "music music music";
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows:  70% 70% 70% 70%;  
+        margin-top: 20%;
+    }
+}
+@media only screen and (max-width : 700px){
+.navbar .navbar-extra a{  
+    display: none;
+}
+.navbar .navbar-logo{
+    margin: auto;
+}
+#clock{
+    display: none;
+}
+}
+@media only screen and (max-width: 600px) {
+    
+    .container{
+        grid-template-areas: "suhu humidity" 
+                              "pressure sid-temp"
+                               "sid-hum stopwatch" 
+                               "sliding-door lampu"
+                                "AC music";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:  70% 70% 70% 70% 70%;  
+        margin-top: 20%;
+    }
+    }
+ @media only screen and (max-width: 500px) {
+    .container{
+            grid-template-areas: "suhu" 
+                                 "humidity" 
+                                  "pressure" 
+                                  "sid-temp"
+                                   "sid-hum" 
+                                   "stopwatch" 
+                                   "sliding-door"
+                                    "lampu"
+                                    "AC" 
+                                    "music";
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(10,70%);  
+            margin-top: 20%;
+    }
+}
+/* style for container 1 ends here */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* style for container 2 starts here */
+.container2 {
+    position: relative;
+    width: 90%;
+    height: 35rem;
+    margin:auto;
+    margin-top: 10%;
+    grid-template-areas: "light o2 n2o air vac"
+                         "hinged-door hinged-door-blinds surgical-light sliding-door sliding-door-perm";
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 50% 50%;
+    display: none;
+}
+.container2 .item{
+    padding:2%;
+    margin : 2%;
+    border-radius: 3%;
+}
+.container2 .label2{
+    display: grid;
+    position : absolute;
+    align-items: center;
+     bottom: 0;
+    height: 20%;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    color: #ece5e5;
+    border-top: 2px solid rgb(249, 249, 249);
+}
+
+.container2 .icon2{
+    position: absolute;
+    top: 0;
+    height: 20%;
+    width: 100%;
+    padding : 2%;
+    margin: auto;
+    color: #daf6ff;
+    border-bottom: 2px solid white;
+}
+.container2 .icon2 img{
+    display: block;
+    height: 100%;
+    margin:auto;
+}
+
+/* styling for light starts  here */
+.container2 .light{
+    grid-area: light;
+    display: grid;
+    position: relative;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 .light .light-nilai{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.container2 .light .light-nilai p{
+    text-align: center;
+    color: #daf6ff;
+    font-size: 40px;
+}
+
+
+/* styling for light ends  here */
+/* syling for o2 starts here */
+.container2 .o2{
+    grid-area: o2;
+    display: grid;
+    position: relative;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 .o2 .o2-nilai{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.container2 .o2 .o2-nilai p{
+    text-align: center;
+    color: #daf6ff;
+    font-size: 50px;
+}
+
+
+/* syling for o2 ends here */
+/* styling for N2O starts here */
+.container2 .n2o{ 
+    grid-area: n2o;
+    display: grid;
+    position: relative;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 .n2o .n2o-nilai{
+    margin: auto ;
+    text-align: center;
+    font-size: 50px;
+    color: #daf6ff;
+}
+.container2 .n2o .n2o-nilai sup{
+    font-size: 20px;
+    vertical-align: super;
+}
+
+/* styling N2O ends here */   
+/* air starts here */
+.container2 .air{
+    grid-area: air;
+    display: grid;
+    position: relative;
+    background-color: blue;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 .air .air-nilai{
+    margin: auto ;
+    text-align: center;
+    font-size: 50px;
+    color: #daf6ff;
+}
+
+
+/* styling air ends here */
+/* styling for vac starts here */
+.container2 .vac{
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    grid-area: vac;
+    background-color: brown;
+    padding: 1%;
+}
+
+.container2 .vac .vac-nilai{
+    margin: auto ;
+    text-align: center;
+    font-size: 50px;
+    color: #daf6ff;
+}
+
+
+  
+/*styling for Vac ends here  */
+/* styling for hinged-door starts here */
+.container2 .hinged-door{
+    grid-area: hinged-door;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+}
+
+.container2 .hinged-door .hinged-door-nilai button{
+    background-color: transparent;
+    color: #daf6ff;
+    font-size: 30px;
+    transition: border 0.1s;
+    border: transparent;
+    transition: 0.1s;
+}
+.container2 .hinged-door .hinged-door-nilai button:hover{
+    transform: scale(1.1);
+    border:2px solid #27aa6b;
+    background-color: rgb(0, 0, 0);
+
+
+}
+
+/* styling for stopwatch ends here */
+/* styling for hinged door blinds starts here */
+.container2 .hinged-door-blinds{
+    grid-area: hinged-door-blinds;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    padding: 1%;
+}
+
+.container2 .hinged-door-blinds .hinged-door-blinds-nilai{
+    display: grid;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.container2 .hinged-door-blinds .hinged-door-blinds-nilai button{
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: #daf6ff;
+    transition: 0.1s;
+    border-radius: 10%;
+}
+.container2 .hinged-door-blinds .hinged-door-blinds-nilai button:hover{
+    
+    transform: scale(1.1);
+    border-bottom: 100px;
+    border: 2px solid rgb(19, 123, 71);
+}
+
+/* styling for hinged door blinds ends here */
+/* styling for surgical light starts here */
+.container2 .surgical-light{
+    grid-area: surgical-light;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    padding: 1%;
+}
+
+.container2 .surgical-light .surgical-light-nilai{
+    margin: auto ;
+    text-align: center;
+    font-size: 50px;
+    color: #daf6ff;
+}
+.container2 .surgical-light .surgical-light-nilai button{
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: #daf6ff;
+    transition: 0.1s;
+    border-radius: 10%;
+    font-size: 20px;
+}
+.container2 .surgical-light .surgical-light-nilai button:hover{
+    
+    transform: scale(1.1);
+    border-bottom: 100px;
+    border: 2px solid rgb(19, 123, 71);
+}
+
+/* style for surgical light ends here */
+/* style for sliding door starts here */
+.container2 .sliding-door{
+    grid-area: sliding-door;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    padding: 1%;
+}
+
+.container2 .sliding-door .sliding-door-nilai{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.container2 .sliding-door .sliding-door-nilai p{
+    text-align: center;
+    color: #daf6ff;
+    font-size: 40px;
+}
+
+/* style for sliding door ends here */
+/* style for sliding door perm starts here */
+.container2 .sliding-door-perm{
+    grid-area: sliding-door-perm;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(3, 39, 86);
+    padding: 1%;
+}
+
+.container2 .sliding-door-perm .sliding-door-perm-nilai{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.container2 .sliding-door-perm .sliding-door-perm-nilai p{
+    text-align: center;
+    color: #daf6ff;
+    font-size: 40px;
+}
+
+/* responsive parts */
+@media only screen and (max-width: 1200px) {
+    .container2{
+        grid-template-areas: "light o2 n2o air"
+                              "vac hinged-door hinged-door-blinds surgical-light"
+                               "sliding-door sliding-door sliding-door-perm sliding-door-perm";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows:  50% 50% 50%;  
+        margin-top: 20%;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .container2{
+        grid-template-areas: "light o2 n2o"
+                             "air vac hinged-door" 
+                             "hinged-door-blinds surgical-light sliding-door" 
+                              "sliding-door-perm sliding-door-perm sliding-door-perm";
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows:  50% 50% 50% 50%;  
+        margin-top: 20%;
+    }
+}
+@media only screen and (max-width : 700px){
+.navbar .navbar-extra a{  
+    display: none;
+}
+.navbar .navbar-logo{
+    margin: auto;
+}
+#clock{
+    display: none;
+}
+}
+@media only screen and (max-width: 600px) {
+    
+    .container2{
+        grid-template-areas: "light o2"
+                            "n2o air" 
+                            "vac hinged-door" 
+                            "hinged-door-blinds surgical-light" 
+                            "sliding-door sliding-door-perm" ;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:  70% 70% 70% 70%;  
+        margin-top: 20%;
+    }
+    }
+ @media only screen and (max-width: 500px) {
+    .container2{
+        width: 300px;
+        grid-template-areas: "light" 
+                                "o2"
+                                "n2o" 
+                                "air" 
+                                "vac"
+                                "hinged-door" 
+                                "hinged-door-blinds"
+                                "surgical-light" 
+                                "sliding-door" 
+                                "sliding-door-perm"; 
+        grid-template-columns: 1fr;
+        grid-template-rows:  repeat(10,50%);   
+        margin-top: 20%;
+    }
+}
+/* style for sliding door perm ends here */
+.container2 .item{
+  background-color: #1c1a1a; 
+  border : 1px solid white;
+}
+
+.container.active {
+    display: grid;
+  }
+  
+.container2.active {
+    display: grid;
+  }
+
+.room-info.active{
+    display: grid;
+}
+.login-box.active{
+    display: flex;
+    position: relative;
+    z-index: 90;
+}

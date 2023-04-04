@@ -1,0 +1,682 @@
+:root{
+    --primary: #aa6927;
+    --bg : #000000;
+    --border-color:2px solid #ece5e5;
+    /* --container-margin:5%;
+    --container-padding:2%; */
+    /* font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Raleway', sans-serif; */
+    font-family: 'Orbitron', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline:none;
+    border:none;
+    text-decoration: none;
+}
+body{
+    background-image: url(../img/bg/bg3.jpg);
+}
+
+/* navbar style */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px 2%;
+    background-image: url(../img/bg/bg-for-navbar.jpg);
+    border-bottom: 1px solid rgb(246, 247, 248);
+    position:fixed;
+    top: 0;
+    left:0;
+    right:0;
+    z-index: 9999;
+}
+
+/* navbar icons here */
+.navbar .navbar-extra a{
+  color:rgb(245, 247, 248); 
+  margin:auto;
+  background-color: transparent;
+  transition: 0.2s;
+}
+.feather-32{
+  width: 30px;
+  height: 30px;
+}
+.navbar .navbar-extra a:hover{
+    color:#363333;
+}
+.navbar .navbar-logo{
+    height: 65px;
+    width: 200px;
+}
+.navbar .navbar-logo img{
+    width: 170px;
+    margin: auto;
+}
+/* style for clocks from codepen starts here */
+#clock {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #daf6ff;
+  text-shadow: 0 0 20px rgb(3, 209, 255), 0 0 20px rgba(10, 175, 230, 0);
+}
+#clock .clock-time {
+  letter-spacing: 0.05em;
+  font-size: 15px;
+  padding: 5px 0;
+}
+#clock .clock-date {
+  letter-spacing: 0.1em;
+  font-size: 20px;
+}
+#clock .clock-text {
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  padding: 20px 0 0;
+}
+/* style for clocks from codepen ends here */
+/* navbar icons end here */
+/* navbar style ends here */
+
+.container {
+    position: relative;
+    width: 90%;
+    height: 35rem;
+    margin:auto;
+    margin-top: 10%;
+    display: grid;
+    grid-template-areas: "suhu humidity pressure sid-temp sid-hum"
+                         "stopwatch sliding-door lampu AC music";
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 50% 50%;
+}
+.container .item{
+    padding:2%;
+    margin : 2%;
+    border-radius: 3%;
+    background-color: #1c1a1a; 
+    border : 1px solid white;
+}
+
+/* styling for temperature control starts  here */
+.container .suhu{
+    grid-area: suhu;
+    display: grid;
+    position: relative;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+}
+.container .suhu .suhu-label{
+    display: grid;
+    position : absolute;
+    align-items: center;
+     bottom: 0;
+    height: 20%;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    color: #ece5e5;
+    border-top: 2px solid rgb(249, 249, 249);
+}
+.container .suhu .suhu-icon{
+    position: absolute;
+    top: 0;
+    height: 20%;
+    width: 100%;
+    padding : 2%;
+    margin: auto;
+    color: #daf6ff;
+    border-bottom: 2px solid white;
+}
+.container .suhu .suhu-icon img{
+    display: block;
+    height: 100%;
+    margin:auto;
+}
+/* styling for temperature control ends  here */
+/* syling for humidity control starts here */
+.container .humidity{
+    grid-area: humidity;
+    display: grid;
+    position: relative;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+}
+.container .humidity .humidity-label{
+    display: grid;
+    position : absolute;
+    align-items: center;
+     bottom: 0;
+    height: 20%;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    color: #ece5e5;
+    border-top: 2px solid rgb(249, 249, 249);
+}
+.container .humidity .humidity-icon{
+    position: absolute;
+    top: 0;
+    height: 20%;
+    width: 100%;
+    padding : 2%;
+    margin: auto;
+    color: #daf6ff;
+    border-bottom: 2px solid white;
+}
+.container .humidity .humidity-icon img{
+    display: block;
+    height: 100%;
+    margin:auto;
+}
+/* syling for humidity control ends here */
+/* styling for pressure control starts here */
+.container .pressure{ 
+    grid-area: pressure;
+    display: grid;
+    position: relative;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+}
+.container .pressure .pressure-icon{
+    position: absolute;
+    top: 0;
+    height: 20%;
+    width: 100%;
+    padding : 2%;
+    margin: auto;
+    color: #daf6ff;
+    border-bottom: 2px solid white;
+}
+.container .pressure .pressure-icon img{
+    display: block;
+    height: 100%;
+    margin:auto;
+} 
+.container .pressure .pressure-nilai{
+    margin: auto ;
+    text-align: center;
+    font-size: 50px;
+    color: #daf6ff;
+}
+.container .pressure .pressure-nilai sup{
+    font-size: 20px;
+    vertical-align: super;
+}
+.container .pressure .pressure-label{
+    display: grid;
+    position : absolute;
+    align-items: center;
+     bottom: 0;
+    height: 20%;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    color: #ece5e5;
+    border-top: 2px solid rgb(249, 249, 249);
+}
+/* styling for pressure control ends here */   
+/* styling for sid-temp starts here */
+.container .sid-temp{
+    display: grid;
+    position: relative;
+    grid-area: sid-temp;
+    background-color: #1c1a1a;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+}
+.container .sid-temp .sid-temp-icon{
+    position: absolute;
+    top: 0;
+    height: 20%;
+    width: 100%;
+    padding : 2%;
+    margin: auto;
+    color: #daf6ff;
+    border-bottom: 2px solid white;
+}
+.container .sid-temp .sid-temp-icon img{
+    display: block;
+    height: 100%;
+    margin:auto;
+}
+.container .sid-temp .sid-temp-nilai{
+    margin: auto ;
+    text-align: center;
+    font-size: 50px;
+    color: #daf6ff;
+}
+
+.container .sid-temp .sid-temp-label{
+    display: grid;
+    align-items: center;
+    position : absolute;
+    bottom: 0;
+    height: 20%;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    overflow: hidden;
+    color: #ece5e5;
+    border-top: 2px solid rgb(249, 249, 249);
+}
+/* styling for sid-temp ends here */
+/* styling for sid-hum starts here */
+.container .sid-hum{
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    grid-area: sid-hum;
+    background-color: #1c1a1a;
+    padding: 1%;
+}
+.container .sid-hum .sid-hum-icon{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 20%;
+    padding:2%;
+    margin: auto;
+    background-color: transparent;
+    color: #daf6ff;
+    border-bottom: 2px solid white;
+}
+.container .sid-hum .sid-hum-icon img{
+    display: block;
+    height: 100%;
+    margin:auto;
+}
+.container .sid-hum .sid-hum-nilai{
+    margin: auto ;
+    text-align: center;
+    font-size: 50px;
+    color: #daf6ff;
+}
+.container .sid-hum .sid-hum-nilai sup{
+    font-size: 20px;
+    vertical-align: super;
+}
+.container .sid-hum .sid-hum-label{
+    position : absolute;
+    display: grid;
+    align-items: center;
+    bottom: 0;
+    height: 20%;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    color: #ece5e5;
+    border-top: 2px solid rgb(249, 249, 249);
+}
+  
+/*styling for sid-hum ends here  */
+/* styling for stopwatch starts here */
+.container .stopwatch{
+    grid-area: stopwatch;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    background-color: #c4c0c0;
+    border-radius: 3%;
+}
+.container .stopwatch .stopwatch-icon{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 20%;
+    padding:2%;
+    margin: auto;
+    background-color: #1c1a1a;
+    color: #daf6ff;
+    border-bottom: 2px solid white;
+    border-radius: 3%;
+}
+.container .stopwatch .stopwatch-icon img{
+    display: block;
+    height: 100%;
+    margin: auto;
+
+}
+.container .stopwatch .stopwatch-nilai{
+    position: relative;
+    display: grid;
+    width: 200px;
+    height: 150px;
+    margin: 0;
+    padding: 0;
+    background-color:transparent;
+    border-radius: 3%;
+}
+.container .stopwatch .stopwatch-label{
+    display: grid;
+    position : absolute;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    height: 20%;
+    width: 100%;;
+    text-align: center;
+    margin: auto;
+    color: #ece5e5;
+    border-top: 2px solid rgb(249, 249, 249);
+    background-color: #1c1a1a;
+}
+/* styling for stopwatch ends here */
+/* styling for sliding-door starts here */
+.container .sliding-door{
+    grid-area: sliding-door;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c1a1a;
+    padding: 1%;
+}
+.container .sliding-door .sliding-door-icon{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 20%;
+    padding:2%;
+    margin: auto;
+    background-color: transparent;
+    color: #daf6ff;
+    border-bottom: 2px solid white;
+}
+.container .sliding-door .sliding-door-icon img{
+    display: block;
+    height: 100%;
+    margin: auto;
+}
+.container .sliding-door .sliding-door-nilai{
+    display: grid;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.container .sliding-door .sliding-door-nilai button{
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: #daf6ff;
+    transition: 0.1s;
+    border-radius: 10%;
+}
+.container .sliding-door .sliding-door-nilai button:hover{
+    
+    border-bottom: 100px;
+    border: 2px solid springgreen;
+    transform: scale(1.1);
+}
+.container .sliding-door .sliding-door-label{
+    display: grid;
+    position : absolute;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    height: 20%;
+    width: 100%;;
+    text-align: center;
+    margin: auto;
+    color: #ece5e5;
+    border-top: 2px solid rgb(249, 249, 249);
+}
+/* styling for sliding door ends here */
+/* styling for lampu starts here */
+.container .lampu{
+    grid-area: lampu;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c1a1a;
+    padding: 1%;
+}
+.container .lampu .lampu-icon{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 20%;
+    padding:2%;
+    margin: auto;
+    background-color: transparent;
+    color: #daf6ff;
+    border-bottom: 2px solid white;
+}
+.container .lampu .lampu-icon img{
+    display: block;
+    height: 100%;
+    margin: auto;
+}
+.container .lampu .lampu-nilai{
+    margin: auto ;
+    text-align: center;
+    font-size: 30px;
+    color: #daf6ff;
+    
+}
+.container .lampu .lampu-nilai button{
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: #daf6ff;
+    transition: 0.1s;
+    margin: auto;
+    border-radius: 10%;
+}
+.container .lampu .lampu-nilai button:hover{
+    
+    border-bottom: 100px;
+    border: 2px solid springgreen;
+    transform: scale(1.1);
+} 
+.container .lampu .lampu-label{
+    display: grid;
+    position : absolute;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    height: 20%;
+    width: 100%;;
+    text-align: center;
+    margin: auto;
+    color: #ece5e5;
+    border-top: 2px solid rgb(249, 249, 249);
+}
+/* style for lampu ends here */
+/* style for AC starts here */
+.container .AC{
+    grid-area: AC;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c1a1a;
+    padding: 1%;
+}
+.container .AC .AC-icon{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 20%;
+    padding:2%;
+    margin: auto;
+    background-color: transparent;
+    color: #daf6ff;
+    border-bottom: 2px solid white;
+}
+.container .AC .AC-icon img{
+    display: block;
+    height: 100%;
+    margin: auto;
+}
+.container .AC .AC-nilai button{
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: #daf6ff;
+    transition: 0.1s;
+    margin: auto;
+    border-radius: 10%;
+    font-size: 30px;
+    
+}
+.container .AC .AC-nilai button:hover{
+    
+    border-bottom: 100px;
+    border: 2px solid springgreen;
+    transform: scale(1.1);
+} 
+.container .AC .AC-label{
+    display: grid;
+    position : absolute;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    height: 20%;
+    width: 100%;;
+    text-align: center;
+    margin: auto;
+    color: #ece5e5;
+    border-top: 2px solid rgb(249, 249, 249);
+}
+/* style for AC ends here */
+.container .music{
+    grid-area: music;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c1a1a;
+    padding: 1%;
+}
+.container .music .music-icon{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 20%;
+    padding:2%;
+    margin: auto;
+    color: #daf6ff;
+    border-bottom: 2px solid white;
+}
+.container .music .music-icon img{
+    display: block;
+    height: 100%;
+    margin: auto;
+}
+.container .music .music-nilai{
+    display: block;
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+.container .music .music-label{
+    display: grid;
+    position : absolute;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    height: 20%;
+    width: 100%;;
+    text-align: center;
+    color: #ece5e5;
+    border-top: 2px solid rgb(249, 249, 249);
+}
+
+/* responsive parts */
+@media only screen and (max-width: 1200px) {
+    .container{
+        grid-template-areas: "suhu humidity pressure sid-temp"
+                              "sid-hum stopwatch sliding-door lampu"
+                               "AC AC music music";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows:  50% 50% 50% 50%;  
+        margin-top: 20%;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .container{
+        grid-template-areas: "suhu humidity pressure" 
+                              "sid-temp sid-hum stopwatch" 
+                               "sliding-door lampu AC" 
+                               "music music music";
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows:  70% 70% 70% 70%;  
+        margin-top: 20%;
+    }
+}
+@media only screen and (max-width : 700px){
+.navbar .navbar-extra a{  
+    display: none;
+}
+.navbar .navbar-logo{
+    margin: auto;
+}
+#clock{
+    display: none;
+}
+}
+@media only screen and (max-width: 600px) {
+    
+    .container{
+        grid-template-areas: "suhu humidity" 
+                              "pressure sid-temp"
+                               "sid-hum stopwatch" 
+                               "sliding-door lampu"
+                                "AC music";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:  70% 70% 70% 70% 70%;  
+        margin-top: 20%;
+    }
+    }
+ @media only screen and (max-width: 500px) {
+    .container{
+            grid-template-areas: "suhu" 
+                                 "humidity" 
+                                  "pressure" 
+                                  "sid-temp"
+                                   "sid-hum" 
+                                   "stopwatch" 
+                                   "sliding-door"
+                                    "lampu"
+                                    "AC" 
+                                    "music";
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(10,70%);  
+            margin-top: 20%;
+    }
+}
+/* this below just syling for testing*/
+/* .container .item{
+  
+} */
+
+
