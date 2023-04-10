@@ -101,3 +101,37 @@ setting.addEventListener('click',function(event){
     boxLogin.classList.toggle('active');
     
 })
+
+
+// fungsi untuk mengambil data tremperature dari database
+
+function getTemperature() {
+    // AJAX request untuk mengambil semua data suhu dari endpoint /suhu
+    fetch('/suhu')
+      .then(response => response.json())
+      .then(data => {
+        // urutkan data berdasarkan waktu dari terlama ke terbaru
+        data.sort((a, b) => new Date(a.waktu) - new Date(b.waktu));
+  
+        // loop melalui semua data dan tampilkan pada elemen dengan ID suhu-ruangan
+        const suhuElem = document.querySelector('#suhu-ruangan');
+        suhuElem.innerHTML = ''; // kosongkan isi elemen
+        data.forEach(datum => {
+          const suhu = datum.nilai_suhu;
+          const waktu = new Date(datum.waktu).toLocaleString();
+          const suhuItem = document.createElement('div');
+          suhuItem.textContent = `${suhu} derajat Celsius pada ${waktu}`;
+          suhuElem.appendChild(suhuItem);
+        });
+      })
+      .catch(error => {
+        console.error(error)
+      });
+  }
+  
+  // panggil fungsi getTemperature() setiap 5 detik untuk mengambil suhu secara berkala
+  setInterval(getTemperature, 5000);
+  
+  
+
+  

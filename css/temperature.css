@@ -22,10 +22,10 @@ button {
 		background-color var(--trans-dur),
 		color var(--trans-dur);
 	--temp-hue: 50;
-	box-shadow:
+	/* box-shadow:
 		0 0 0.1em hsl(var(--hue),10%,90%),
 		0 0 0.3em hsl(var(--hue),10%,80%),
-		0 0 0.1em hsl(var(--hue),10%,40%) inset;
+		0 0 0.1em hsl(var(--hue),10%,40%) inset; */
 	display: grid;
 	place-items: center;
 	position: relative;

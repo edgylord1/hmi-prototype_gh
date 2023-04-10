@@ -28,14 +28,12 @@ body{
     overflow: hidden;
 }
 
-
-#suhu-ruangan{
-    background-color: #27aa6b;
-    font-size: 20px;
-    color: #a7aaaf;
+#suhu-ruangan,#kelembapan-ruangan,#tekanan-ruangan{
+    background-color:transparent;
+    font-size: 30px;
+    color: black;
+    display: inline-block;
 }
-
-
 
 
 
@@ -112,7 +110,7 @@ body{
 
 /* column1 styling */
 .column1{
-    display: grid;
+    display: none;
     position: absolute;
     left :1%;
     bottom: 11%;
@@ -131,7 +129,7 @@ body{
     grid-template-rows: 0.25fr 1fr 1fr 1fr 0.25fr;
 }
 .column1 .header{
-    display: grid;
+    display: none;
     justify-content: center;
     align-items: center;
     grid-area: header;
@@ -173,7 +171,7 @@ body{
     border-radius: 5%;
 }
 .column1 .temp-nilai{
-    display: grid;
+    display: none;
     align-items: center;
     justify-content: center;
     margin: 2%;
@@ -252,7 +250,7 @@ body{
 
 /* column2 styling */
 .column2{
-    display: grid;
+    display: none;
     position: absolute;
     right :1%;
     bottom: 11%;
@@ -1354,23 +1352,29 @@ body{
 }
 /* style for sliding door perm ends here */
 .container2 .item{
-  background-color: #1c1a1a; 
-  border : 1px solid white;
-}
-
-.container.active {
-    display: grid;
+    background-color: #1c1a1a; 
+    border : 1px solid white;
   }
   
-.container2.active {
-    display: grid;
+  .container.active {
+      display: grid;
+    }
+    
+  .container2.active {
+      display: grid;
+    }
+  
+  .room-info.active{
+      display: grid;
   }
-
-.room-info.active{
-    display: grid;
-}
-.login-box.active{
-    display: flex;
-    position: relative;
-    z-index: 90;
-}
+  .login-box.active{
+      display: flex;
+      position: relative;
+      z-index: 90;
+  }
+  .column1.active{
+      display: grid;
+  }
+  .column2.active{
+      display: grid;
+  }

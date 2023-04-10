@@ -1,0 +1,200 @@
+:root{
+    --primary: #aa6927;
+    --bg : #000000;
+    --border-color:2px solid #ece5e5;
+    /* --container-margin:5%;
+    --container-padding:2%; */
+    /* font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Raleway', sans-serif; */
+    font-family: 'Orbitron', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline:none;
+    border:none;
+    text-decoration: none;
+}
+body{
+    background-color: rgb(6, 5, 5);
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+/* navbar style */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px 2%;
+    background-image: url(../img/bg/bg-for-navbar.jpg);
+    border-bottom: 1px solid rgb(246, 247, 248);
+    position:fixed;
+    top: 0;
+    left:0;
+    right:0;
+    z-index: 9999;
+}
+
+/* navbar icons here */
+.navbar .navbar-extra a{
+  color:rgb(245, 247, 248); 
+  margin:auto;
+  background-color: transparent;
+    
+}
+.feather-32{
+  width: 30px;
+  height: 30px;
+}
+.navbar .navbar-extra a:hover{
+    color:#363333;
+}
+.navbar .navbar-logo{
+    height: 65px;
+    width: 200px;
+  color:rgb(246, 250, 251);
+}
+.navbar .navbar-logo img{
+    width: 170px;
+    margin: auto;
+}
+/* style for clocks from codepen starts here */
+#clock {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #daf6ff;
+  text-shadow: 0 0 20px rgb(3, 209, 255), 0 0 20px rgba(10, 175, 230, 0);
+}
+#clock .clock-time {
+  letter-spacing: 0.05em;
+  font-size: 15px;
+  padding: 5px 0;
+}
+#clock .clock-date {
+  letter-spacing: 0.1em;
+  font-size: 20px;
+}
+#clock .clock-text {
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  padding: 20px 0 0;
+}
+/* style for clocks from codepen ends here */
+/* navbar icons end here */
+/* navbar style ends here */
+
+.box {
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/bg/bg4.jpg);
+  color: #555555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-div {
+  margin:7%;
+  width: 470px;
+  height: 560px;
+  padding: 60px 35px 35px 35px;
+  border-radius: 40px;
+  
+  background: #ecf0f3;
+  box-shadow: 13px 13px 20px #cbced1, -1px -1px 1px #e1dfdf;
+}
+
+.logo {
+  background: url("../img/syas-icon-only.jpg");
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 
+    /* logo shadow */ 0px 0px 2px #5f5f5f,
+    /* offset */ 0px 0px 0px 5px #ecf0f3, 
+    /*bottom right */ 8px 8px 15px #a7aaaf,
+    /* top left */ -8px -8px 15px #ffffff;
+}
+.title {
+  text-align: center;
+  font-size: 28px;
+  padding-top: 20px;
+  letter-spacing: 0.5px;
+}
+
+.sub-title {
+  text-align: center;
+  font-size: 15px;
+  padding-top: 7px;
+  letter-spacing: 3px;
+}
+
+.fields {
+  width: 100%;
+  padding: 75px 5px 5px 5px;
+}
+.fields input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 18px;
+  color: #555;
+  padding: 10px 10px 10px 5px;
+}
+.username,
+.password {
+  padding: 0 30px;
+  margin-bottom: 30px;
+  border-radius: 25px;
+  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+}
+
+.signin-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  text-align: center;
+  background: #8e9291;
+  box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+  transition: 0.5s;
+}
+.signin-button:hover {
+  background: #2fdbb6;
+}
+.signin-button:active {
+  background: #1da88a;
+}
+.link {
+  padding-top: 20px;
+  text-align: center;
+}
+.link a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 15px;
+}
+/* style khusu untuk footer page maintennance */

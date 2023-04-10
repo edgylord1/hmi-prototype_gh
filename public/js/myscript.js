@@ -61,23 +61,7 @@ prevBtn.addEventListener('click', function(event){
     }
 });
 
-// prevBtn.addEventListener('click', function(event){
-//     event.preventDefault();
-    
-//     if (container2.classList.contains('active')) {
-//         container2.classList.remove('active');
-//         roomInfo.classList.add('active');
-//     }
-// });
-// prevBtn.addEventListener('click', function(event){
-//     event.preventDefault();
-    
-//     if (roomInfo.classList.contains('active')) {
-//         roomInfo.classList.remove('active');
-//         column1.classList.add('active');
-//         column2.classList.add('active');
-//     }
-// });
+
   // Tombol home
   homeBtn.addEventListener('click', function() {
   
@@ -99,3 +83,70 @@ setting.addEventListener('click',function(event){
     boxLogin.classList.toggle('active');
     
 })
+
+
+
+//fungsi untuk membaca data temperature dari database 
+
+function getTemperature() {
+    fetch('/suhu')
+      .then(response => response.json())
+      .then(data => {
+        const suhuElem = document.querySelector('#suhu-ruangan')
+        let i = 0; // indeks data
+        setInterval(() => {
+          // tampilkan data ke dalam elemen dengan ID suhu-ruangan
+          suhuElem.textContent = data[i].nilai_suhu;
+          // increment indeks data
+          i++;
+          // reset indeks data ke 0 jika sudah mencapai data terbaru
+          if (i === data.length) {
+            i = 0;
+          }
+        }, 5000);
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
+  
+  // panggil fungsi getTemperature() untuk mengambil suhu secara berkala
+  getTemperature();
+
+
+
+//fungsi untuk membaca data kelembapan dari data database 
+function getKelembapan() {
+  // AJAX request untuk mengambil data kelembapan terbaru dari endpoint /kelembapan
+  fetch('/kelembapan')
+    .then(response => response.json())
+    .then(data => {
+      // tampilkan nilai kelembapan pada elemen dengan ID kelembapan-ruangan
+      const kelembapanElem = document.querySelector('#kelembapan-ruangan')
+      kelembapanElem.textContent = data[0].nilai_kelembapan + '%'
+    })
+    .catch(error => {
+      console.error(error)
+    })
+}
+
+// panggil fungsi getKelembapan() setiap 5 detik untuk mengambil kelembapan secara berkala
+setInterval(getKelembapan, 5000)
+
+
+
+
+function getPressure() {
+    fetch('/tekanan')
+      .then(response => response.json())
+      .then(data => {
+        const tekananElem = document.querySelector('#tekanan-ruangan');
+        tekananElem.textContent = data[0].nilai_tekanan + ' Pa';
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
+  
+  setInterval(getPressure, 5000); 
+  

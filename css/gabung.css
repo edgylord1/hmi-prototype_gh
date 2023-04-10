@@ -43,6 +43,13 @@ body{
     z-index: 9999;
 }
 
+#suhu-ruangan{
+    background-color:transparent;
+    font-size: 30px;
+    color: black;
+    display: inline-block;
+}
+
 /* navbar icons here */
 .navbar .navbar-extra a{
   color:rgb(245, 247, 248); 
@@ -100,7 +107,7 @@ body{
 
 /* column1 styling */
 .column1{
-    display: grid;
+    display: none;
     position: absolute;
     left :1%;
     bottom: 11%;
@@ -240,7 +247,7 @@ body{
 
 /* column2 styling */
 .column2{
-    display: grid;
+    display: none;
     position: absolute;
     right :1%;
     bottom: 11%;
@@ -1361,4 +1368,10 @@ body{
     display: flex;
     position: relative;
     z-index: 90;
+}
+.column1.active{
+    display: grid;
+}
+.column2.active{
+    display: grid;
 }

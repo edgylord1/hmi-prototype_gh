@@ -57,9 +57,9 @@ button {
 }
 .t__inner:after {
 	background-image: linear-gradient(hsl(var(--temp-hue),90%,100%),hsl(var(--temp-hue),90%,50%));
-	/* box-shadow:
+	box-shadow:
 		0 -0.25em 2em hsla(var(--temp-hue),90%,55%,0.3),
-		0 2em 1em hsl(var(--temp-hue),20%,55%); */
+		0 0.5em 1em hsl(var(--temp-hue),20%,55%);
 	top: -0.25em;
 	left: -0.375em;
 	width: 6.1em;
@@ -166,7 +166,7 @@ button {
 }
 
 /* Dark theme */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
 
 	.t {
 		box-shadow:
@@ -195,4 +195,4 @@ button {
 	.t__unit {
 		color: hsl(var(--hue),10%,45%);
 	}
-}
+} */

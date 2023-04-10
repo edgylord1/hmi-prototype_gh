@@ -9,15 +9,15 @@
 <script src="https://unpkg.com/feather-icons"></script>
 
 <!-- my style -->
-<link rel="stylesheet" href="css/gabung.css">
+<link rel="stylesheet" href="/css/gabung.css" type="text/css">
 <!-- end of my style -->
 
 <!-- style for backlight starts here -->
-<link rel="stylesheet" href="css/backlight.css">
+<link rel="stylesheet" href="/css/backlight.css">
 <!-- style for backlight ends here -->
 
 <!-- style for temperature starts here -->
-<link rel="stylesheet" href="css/temperature.css">
+<link rel="stylesheet" href="/css/temperature.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/Draggable.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
 <!-- style for nest thermostat -->
@@ -28,7 +28,7 @@
 
 <!-- style for music player -->
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
-<link rel="stylesheet" href="css/music.css">
+<link rel="stylesheet" href="/css/music.css">
 <!-- style for music player ends here -->
 
 <!-- style for digital clocks -->
@@ -37,11 +37,11 @@
 <!-- style for digital clocks ends here -->
 
 <!-- glass button style starts here -->
-<link rel="stylesheet" href="css/glass-button.css">
+<link rel="stylesheet" href="/css/glass-button.css">
 <!-- glass button style ends here -->
 
 <!-- style for stopwatch -->
-<link rel="stylesheet" href="css/stopwatch.css">
+<link rel="stylesheet" href="/css/stopwatch.css">
 
 <!-- fonts -->
 
@@ -85,35 +85,33 @@
 
 
 <!-- default page starts here -->
-<div class="column1">
+<div class="column1 active">
     <header>
         <button>Click to Close!</button>
     </header>
     <div class="temperature">
         <p>Temperature</p>
         <div class="temp-nilai">
-            <main>25<sup>&#8451</sup></main>
+            <span id="suhu-ruangan"></span>
         </div> 
     </div>
     <div class="humidity">
         <p>Humidity</p>
         <div class="hum-nilai">
-            <main>
-                66.3<sup>%</sup>
-            </main>
+                <span id="kelembapan-ruangan"></span>
         </div>
     </div>
     <div class="pressure">
         <p>Pressure</p>
         <div class="pressure-nilai">
-            <main>8.4<sup>pa</sup></main>
+            <span id="tekanan-ruangan"></span>
         </div>
     </div>
     <div class="manual-settings">
-        <button>Manual Settings</button>
+        <button>Parameter</button>
     </div>
 </div>
-<div class="column2">
+<div class="column2 active">
     <div class="header">
         <button>Click to Close!</button>
     </div>
@@ -630,44 +628,6 @@
 <!-- scripts for music endsplayer -->
 <!-- script for stopwatch -->
 <script src="js/stopwatch.js"></script>
-
-
-<!-- function myfunction1() {
-  var demo = document.getElementById('demo1');
-  var lampu = document.getElementById('lampu');
-
-  switch (demo.innerHTML) {
-    case 'On':
-      demo.innerHTML = 'Off';
-      lampu.src='img/lampu-icon.png';
-      break;
-    case 'Off':
-      demo.innerHTML = 'On';
-      lampu.src='img/lampu-mati-icon.png';
-      break;
-    default:
-      break;
-  }
-}
-function myfunction2() {
-  var demo = document.getElementById('demo2');
-  var ac = document.getElementById('ac');
-
-  switch (demo.innerHTML) {
-    case 'On':
-      demo.innerHTML = 'Off';
-      ac.src='img/air-conditioner.gif';
-      break;
-    case 'Off':
-      demo.innerHTML = 'On';
-      ac.src='img/AC-icon.png';
-      break;
-    default:
-      break;
-  }
-} --> 
-
-
 <!-- my scripts -->
 <script src="js/myscript.js"></script>
 <script src="js/icon.js"></script>
