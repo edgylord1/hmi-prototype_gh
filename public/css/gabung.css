@@ -106,6 +106,8 @@ body{
 /* navbar style ends here */
 
 
+
+
 /* styling for default page starts here */
 
 /* column1 styling */
@@ -171,7 +173,7 @@ body{
     border-radius: 5%;
 }
 .column1 .temp-nilai{
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     margin: 2%;

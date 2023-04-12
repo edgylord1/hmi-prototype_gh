@@ -28,7 +28,7 @@
 .footer .home img{
 	position: absolute;
 	width: 50px;
-	left: 50%;
+	left: 48%;
 }
 .footer .glass .prev {
     position: absolute;
@@ -38,7 +38,7 @@
     background-color: transparent;
 	cursor: pointer;
 }
-.footer .glass .next {
+.footer .glass .next-button {
     position: absolute;
 	right: 5%;
     width: 15%;

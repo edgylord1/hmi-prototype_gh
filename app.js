@@ -2,6 +2,7 @@ const express = require('express');
 const mysql = require('mysql');
 const app = express();
 const port = 3000;
+const bodyParser = require('body-parser');
 
 
 const connection = mysql.createConnection({
@@ -10,6 +11,12 @@ const connection = mysql.createConnection({
   password: 'fragmakyodai12',
   database: 'sensor'
 })
+
+
+
+app.use(express.urlencoded({extended: 'false'}))
+app.use(express.json())
+
 
 // endpoint untuk mengambil suhu terbaru dari database
 app.get('/suhu', (req, res) => {
@@ -69,12 +76,42 @@ app.get('/tekanan', (req, res) => {
 
 
 
-app.set('view engine', 'ejs');
-app.use(express.static(__dirname + '/public'));
+
+
+  app.set('view engine', 'ejs');
+  app.use(express.static(__dirname + '/public'));
+
 
 app.get('/', (req,res)=>{
     res.render('gabung');    
 });
+
+
+
+// endpoint untuk meng-handle form
+app.post('/submitform', (req, res) => {
+  const namaDokter = req.body.namaDokter;
+  const namaPasien = req.body.namaPasien;
+  const jenisOperasi = req.body.jenisOperasi;
+  console.log(namaDokter);
+  console.log(namaPasien);
+  console.log(jenisOperasi);
+
+  const query = `INSERT INTO pasien2 (nama_dokter,nama_pasien, jenis_operasi) VALUES ('${namaDokter}', '${namaPasien}', '${jenisOperasi}')`;
+  
+  connection.query(query, (error, results) => {
+    if (error) {
+      console.error(error); // tampilkan error pada console
+      res.status(500).json({ message: 'Internal server error' });
+    } else {
+      // res.status(200).json({ message: 'Data berhasil disimpan' });
+      res.redirect('/'); // redirect ke halaman awal
+    }
+  });
+});
+
+
+
 
 app.listen(port, ()=>{
     console.log(`Server listening on port ${port}`);

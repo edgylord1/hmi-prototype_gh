@@ -1,4 +1,4 @@
-const nextBtn = document.querySelector('.next');
+const nextBtn = document.querySelector('.next-button');
 const prevBtn = document.querySelector('.prev');
 const container = document.querySelector('.container');
 const container2 = document.querySelector('.container2');
@@ -78,7 +78,7 @@ prevBtn.addEventListener('click', function(event){
 });
 
 // tombol setting untuk login
-setting.addEventListener('click',function(event){
+setting.addEventListener('click',function(){
     
     boxLogin.classList.toggle('active');
     
@@ -150,3 +150,10 @@ function getPressure() {
   
   setInterval(getPressure, 5000); 
   
+
+
+
+
+
+
+
