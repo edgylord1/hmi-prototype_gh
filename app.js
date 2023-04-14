@@ -78,13 +78,7 @@ app.get('/tekanan', (req, res) => {
 
 
 
-  app.set('view engine', 'ejs');
-  app.use(express.static(__dirname + '/public'));
 
-
-app.get('/', (req,res)=>{
-    res.render('gabung');    
-});
 
 
 
@@ -105,6 +99,7 @@ app.post('/submitform', (req, res) => {
       res.status(500).json({ message: 'Internal server error' });
     } else {
       // res.status(200).json({ message: 'Data berhasil disimpan' });
+
       res.redirect('/'); // redirect ke halaman awal
     }
   });
@@ -113,6 +108,126 @@ app.post('/submitform', (req, res) => {
 
 
 
+// untuk menampilkan data dokter pasien dan jenis operasi terakhir
+app.get('/latest-data', (req, res) => {
+  connection.query('SELECT * FROM pasien2 ORDER BY id DESC LIMIT 1', (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal server error' });
+    } else {
+      const latestData = {
+        namaDokter: results[0].nama_dokter,
+        namaPasien: results[0].nama_pasien,
+        jenisOperasi: results[0].jenis_operasi
+      };
+      res.json(latestData);
+    }
+  });
+});
+
+
+app.post('/loginform', (req, res) => {
+  const username = 'admin';
+  const password = 'admin';
+  console.log(req.body.username);
+  console.log(req.body.password);
+  if (username === req.body.username && password === req.body.password) {
+    res.send('Anda berhasil login');
+  } else {
+    res.redirect('/');
+  }
+})
+
+
+// menghandle status sliding door yang dikirimkan melalui client side
+
+app.post("/sliding-door", (req, res) => {
+  const data = req.body;
+  connection.query(
+    "INSERT INTO sliding_door (status) VALUES (?)",
+    [data.status],
+    (error, results) => {
+      if (error) {
+        console.error(error);
+        res.status(500).send("Error saving data");
+      } else {
+        res.send("Data saved successfully");
+      }
+    }
+  );
+});
+
+
+
+
+// menghandle status surgical light untuk dimasukan ke database
+
+app.post("/surgical-light", (req, res) => {
+  const data = req.body;
+  connection.query(
+    "INSERT INTO surgical_light (status) VALUES (?)",
+    [data.status],
+    (error, results) => {
+      if (error) {
+        console.error(error);
+        res.status(500).send("Error saving data");
+      } else {
+        res.send("Data saved successfully");
+      }
+    }
+  );
+});
+
+
+// menghandle status dali light untuk dimasukan ke database
+
+app.post("/dali-light", (req, res) => {
+  const data = req.body;
+  connection.query(
+    "INSERT INTO dali_light (status) VALUES (?)",
+    [data.status],
+    (error, results) => {
+      if (error) {
+        console.error(error);
+        res.status(500).send("Error saving data");
+      } else {
+        res.send("Data saved successfully");
+      }
+    }
+  );
+});
+
+
+// // endpoint mengirim status dali light terakhir dari database
+
+// app.get('/dali-light-status', (req, res) => {
+//   const query = 'SELECT id, status FROM dali_light ORDER BY id DESC LIMIT 1';
+  
+//   connection.query(query, (error, results) => {
+//     if (error) {
+//       console.error(error);
+//       res.status(500).json({ message: 'Internal server error' });
+//     } else {
+//       res.json(results[0]); // mengambil hasil query pertama (hanya satu baris)
+//     }
+//   });
+// });
+
+
+
+
+
+
+
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
+
+
+app.get('/', (req,res)=>{
+  res.render('gabung');    
+});
+
+// menjalankan server
 app.listen(port, ()=>{
     console.log(`Server listening on port ${port}`);
 });

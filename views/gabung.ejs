@@ -146,7 +146,7 @@
 
 
 <!-- MultiStep Form -->
-<div class="row">
+<div class="row active">
     <div class="col-md-6 col-md-offset-3">
         <form id="msform" action="/submitform" method="POST">
             <!-- progressbar -->
@@ -223,6 +223,7 @@
         </div>
         <div class="main">
             <button>Occupied</button>
+            <button>Unoccupied</button>
         </div>
     </div>
     <div class="hvac-press item">
@@ -231,6 +232,7 @@
         </div>
         <div class="main">
             <button>Positive</button>
+            <button>Negative</button>
         </div>
     </div>
     <div class="disturb item">
@@ -248,53 +250,47 @@
         <div class="header">
             Nama Dokter
         </div>
-        <div class="main">
-            <form action="">
-                <input type="text" id="nama-dokter" placeholder="input nama dokter!" size="15">
-            </form>
-        </div>
+        <div class="dokter">dokter</div>
     </div>
     <div class="nama-pasien item">
         <div class="header">
             Nama Pasien
         </div>
-        <div class="main">
-            <form action="">
-                <input type="text" id="nama-pasien" placeholder="input nama pasien!" size="15">
-            </form>
-        </div>
+        <div class="pasien">pasien</div>
     </div>
     <div class="jenis-operasi item">
         <div class="header">
             Jenis Operasi
         </div>
-        <div class="main">
-            <form action="">
-                <input type="text" id="jenis-operasi" placeholder="input jenis operasi!" size="15">
-            </form>
-        </div>
+        <div class="operasi">jenis operasi</div>
     </div>
 </div>
 <!-- room info contents ends here -->
 
 <!-- login  contents starts here -->
  <!-- partial:index.partial.html -->
- <div class="login-box">
+<div class="login-box">
     <div class="login-div">
-      <div class="logo"></div>
-      <div class="title">SYAS TECHNOLOGY</div>
-      <div class="sub-title">Maintenance Page</div>
-      <div class="fields">
-        <div class="username">
-          <input type="username" class="user-input" placeholder="Username" />
-        </div>
-        <div class="password">
-          <input type="password" class="pass-input" placeholder="Password" />
-        </div>
-      </div>
-      <button class="signin-button">Login</button>
+        <form id="loginform" action="/loginform" method="POST">
+            <div class="logo"></div>
+            <div class="title">SYAS TECHNOLOGY</div>
+            <div class="sub-title">Maintenance Page</div>
+            <div class="fields">
+                <div class="username">
+                    <input type="text" name="username" class="user-input" placeholder="Username" />
+                </div>
+                <div class="password">
+                    <input type="password" name="password"  class="pass-input" placeholder="Password" />
+                </div>
+            </div>
+            <button class="signin-button">
+            <input type="submit" name="submit" class="submit action-button" value="Login"/>
+            </button>
+        </form>
     </div>
 </div>
+  
+  
 <!-- partial -->   
 <!-- login  contents ends here -->
 

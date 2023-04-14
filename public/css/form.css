@@ -8,6 +8,15 @@
     left: 24%;
 }
 
+
+.row{
+    display: none;
+}
+
+.row.active{
+    display: block;
+}
+
 #msform fieldset {
     background: rgb(243, 239, 239);
     border: 0 none;

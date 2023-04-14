@@ -29,15 +29,20 @@ function sliding() {
 function dali() {
     const bDali = document.getElementById('bDali');
     const dali=document.getElementById('dali-icon');
+    const bColor = document.querySelector('.lampu')
     bDali.addEventListener('click',function(){
         switch (bDali.innerHTML) {
             case 'On':
               bDali.innerHTML = 'Off';
-              dali.src="img/lampu-icon.png"
+              dali.src="img/lampu-icon.png";
+              bColor.style.borderColor='yellow';
+              bColor.style.borderWidth ='3px';
               break;
             case 'Off':
               bDali.innerHTML = 'On';
-              dali.src="img/lampu-mati-icon.png"
+              dali.src="img/lampu-mati-icon.png";
+              bColor.style.borderColor='white';
+              bColor.style.borderWidth ='2px';
               break;
             default:
               break;
@@ -53,15 +58,27 @@ function dali() {
 function surgicalLight() {
   const bSurgical = document.getElementById('bSurgicalLight');
   const surgical=document.getElementById('lampu-img');
+  const bColor = document.querySelector('.surgical-light')
   bSurgical.addEventListener('click',function(){
+    surgical.style.opacity = '0';
       switch (bSurgical.innerHTML) {
           case 'On':
             bSurgical.innerHTML = 'Off';
-            surgical.src="img/lampu-icon.png"
+            setTimeout(function(){
+              surgical.src="img/lampu-icon.png";
+              surgical.style.opacity = '1';
+            },100)
+            bColor.style.borderColor='yellow';
+            bColor.style.borderWidth ='3px';
             break;
           case 'Off':
             bSurgical.innerHTML = 'On';
-            surgical.src="img/lampu-mati-icon.png"
+            setTimeout(function(){
+              surgical.src="img/lampu-mati-icon.png";
+              surgical.style.opacity = '1';
+            },100)
+            bColor.style.borderColor='white';
+            bColor.style.borderWidth ='2px';
             break;
           default:
             break;
