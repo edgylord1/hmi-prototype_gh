@@ -157,6 +157,20 @@ app.post("/sliding-door", (req, res) => {
   );
 });
 
+// mengambil status terakhir sliding door dari database
+
+app.get("/sliding-door-status",(req,res) =>{
+  const query = 'SELECT id, status FROM sliding_door ORDER BY id DESC';
+  connection.query(query, (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal server error' });
+    } else {
+      res.json(results);
+    }
+  });
+})
+
 
 
 
@@ -189,16 +203,29 @@ app.post("/dali-light", (req, res) => {
     (error, results) => {
       if (error) {
         console.error(error);
-        res.status(500).send("Error saving data");
+        res.status(500).json({ error: "Error saving data" });
       } else {
-        res.send("Data saved successfully");
+        res.json({ message: "Data saved successfully" });
       }
     }
   );
 });
 
 
-// // endpoint mengirim status dali light terakhir dari database
+
+// endpoint mengirim status dali light terakhir dari database untuk mengupdate html dan icon
+
+app.get("/dali-light-status",(req,res) =>{
+  const query = 'SELECT id, status FROM dali_light ORDER BY id DESC';
+  connection.query(query, (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal server error' });
+    } else {
+      res.json(results);
+    }
+  });
+})
 
 // app.get('/dali-light-status', (req, res) => {
 //   const query = 'SELECT id, status FROM dali_light ORDER BY id DESC LIMIT 1';
@@ -224,7 +251,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.get('/', (req,res)=>{
-  res.render('gabung');    
+   res.render('gabung');    
 });
 
 // menjalankan server

@@ -241,11 +241,10 @@ fetch('/latest-data')
 
   document.getElementById("bDali").addEventListener("click", function() {
     const buttonHtml = this.innerHTML;
+    const daliStatus = document.querySelector('.dali-light-status');
     let status = false;
     if (buttonHtml === "On") {
       status = true;
-    } else if (buttonHtml === "Off") {
-      status = false;
     }
   
     fetch("/dali-light", {
@@ -255,22 +254,83 @@ fetch('/latest-data')
       },
       body: JSON.stringify({ status: status })
     })
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
     .then(data => {
       console.log(data);
+      if (status) {
+        daliStatus.innerHTML = "On";
+      } else {
+        daliStatus.innerHTML = "Off";
+      }
     })
     .catch(error => {
       console.error(error);
     });
   });
+  
+  
+  
 
 
+// mengambil status terakhir sliding door dari server kemudian megubah tampilan sesuai status
 
-  // // menampilkan status dali light pada light status pada container2
+function getSldDoorStatus(){
+fetch('/sliding-door-status')
+.then(response => response.json())
+.then(data => {
+  const bSldDoor = document.getElementById('bSldDoor');
+  const sliding=document.getElementById('sliding-door-icon');
+  if(data[0].status){
+    bSldDoor.innerHTML = 'Close';
+    sliding.src="img/opened-sliding-door.png"
+  }
+  else if(!data[0].status){
+    bSldDoor.innerHTML = 'Open';
+    sliding.src="img/sliding-door-icon.png"
+  }
+  
+})
+.catch(error => {
+  console.error(error);
+});
+}
 
-  // fetch('/dali-light-status')
-  // .then(response => response.json())
-  // .then(data => {
-  //   const status = document.querySelector('.light-nilai');
-  //   status.innerHTML = data.status;
-  // });
+// mengambil status terakhir dali light dari server kemudian mengubah tampilan sesuai status
+
+function getDaliStatus(){
+fetch('/dali-light-status')
+.then(response => response.json())
+.then(data => {
+  const bDali = document.getElementById('bDali');
+  const dali = document.getElementById('dali-icon');
+  const bColor = document.querySelector('.lampu');
+  const daliStatus = document.querySelector('.dali-light-status');
+  if(data[0].status){
+    bDali.innerHTML = 'Off';
+    dali.src="img/lampu-icon.png";
+    bColor.style.borderWidth ='3px';
+    bColor.style.borderColor='yellow';
+    daliStatus.innerHTML = 'On'
+  }
+  else if(!data[0].status){
+    bDali.innerHTML = 'On';
+    dali.src="img/lampu-mati-icon.png";
+    bColor.style.borderWidth ='2px';
+    bColor.style.borderColor='white';
+    daliStatus.innerHTML = 'Off';
+  }
+  
+})
+.catch(error => {
+  console.error(error);
+});
+}
+
+getSldDoorStatus();
+getDaliStatus();
+
