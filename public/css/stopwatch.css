@@ -44,7 +44,7 @@ input {
 .container .stopwatch .stopwatch-nilai .btn {
   padding: 10px 20px;
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: rgba(220,226,239,255);
 }
 .container .stopwatch .stopwatch-nilai .btn:hover {
   box-shadow: inset 5px 5px 20px #bebebe,
